@@ -1,0 +1,751 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth overflow-x-hidden">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>France Motors Garage | Especialista em Franceses</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Trocando Chakra Petch por Exo 2 para um visual mais moderno e automotivo -->
+    <link href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,300;0,400;0,600;0,700;0,800;1,700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        fmg: {
+                            red: '#E60000',
+                            dark: '#0a0a0a',
+                            gray: '#171717',
+                            light: '#f5f5f5'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        tech: ['"Exo 2"', 'sans-serif'], // Fonte atualizada
+                    },
+                    animation: {
+                        'infinite-scroll': 'infinite-scroll 25s linear infinite',
+                    },
+                    keyframes: {
+                        'infinite-scroll': {
+                            from: { transform: 'translateX(0)' },
+                            to: { transform: 'translateX(-100%)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0a0a0a;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #E60000;
+            border-radius: 4px;
+        }
+
+        /* Hero Overlay Gradient */
+        .hero-gradient {
+            background: linear-gradient(to right, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.6) 100%);
+        }
+
+        /* Glassmorphism for cards */
+        .glass-card {
+            background: rgba(23, 23, 23, 0.7);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        
+        .faq-details[open] summary ~ * {
+            animation: sweep .5s ease-in-out;
+        }
+
+        @keyframes sweep {
+            0%    {opacity: 0; transform: translateY(-10px)}
+            100%  {opacity: 1; transform: translateY(0)}
+        }
+
+        /* Turbo Spin Animation */
+        @keyframes spin-turbo {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        .spin-turbo-active {
+            animation: spin-turbo 0.15s linear infinite;
+        }
+    </style>
+</head>
+<body class="bg-fmg-dark text-white antialiased overflow-x-hidden w-full">
+
+    <!-- Navbar -->
+    <nav class="fixed w-full z-50 bg-fmg-dark/90 backdrop-blur-md border-b border-white/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <div class="flex-shrink-0">
+                    <img class="h-16 w-auto object-contain" src="/assets/images/logo.png" alt="France Motors Garage Logo">
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8 font-tech tracking-wider">
+                        <a href="#home" class="hover:text-fmg-red transition-colors px-3 py-2 rounded-md text-sm font-bold uppercase">Início</a>
+                        <a href="#brands" class="hover:text-fmg-red transition-colors px-3 py-2 rounded-md text-sm font-bold uppercase">Marcas</a>
+                        <a href="#services" class="hover:text-fmg-red transition-colors px-3 py-2 rounded-md text-sm font-bold uppercase">Serviços</a>
+                        <a href="#store" class="hover:text-fmg-red transition-colors px-3 py-2 rounded-md text-sm font-bold uppercase">Peças</a>
+                        <a href="#reviews" class="hover:text-fmg-red transition-colors px-3 py-2 rounded-md text-sm font-bold uppercase">Avaliações</a>
+                        <a href="https://wa.me/5511956503249?text=Ol%C3%A1%20vim%20do%20Site%20e%20quero%20fazer%20um%20agendamento!" target="_blank" class="bg-fmg-red hover:bg-red-700 text-white px-4 py-2 rounded-md text-sm font-black uppercase transition-all clip-path-slant italic">Agendar</a>
+                    </div>
+                </div>
+                <div class="-mr-2 flex md:hidden">
+                    <button type="button" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none">
+                        <i data-lucide="menu" class="w-8 h-8"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div class="hidden md:hidden bg-fmg-gray border-b border-red-900/30" id="mobile-menu">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 font-tech">
+                <a href="#home" class="text-gray-300 hover:text-fmg-red block px-3 py-2 rounded-md text-base font-bold uppercase">Início</a>
+                <a href="#brands" class="text-gray-300 hover:text-fmg-red block px-3 py-2 rounded-md text-base font-bold uppercase">Marcas</a>
+                <a href="#services" class="text-gray-300 hover:text-fmg-red block px-3 py-2 rounded-md text-base font-bold uppercase">Serviços</a>
+                <a href="#store" class="text-gray-300 hover:text-fmg-red block px-3 py-2 rounded-md text-base font-bold uppercase">Peças</a>
+                <a href="#reviews" class="text-gray-300 hover:text-fmg-red block px-3 py-2 rounded-md text-base font-bold uppercase">Avaliações</a>
+                <a href="https://wa.me/5511956503249?text=Ol%C3%A1%20vim%20do%20Site%20e%20quero%20fazer%20um%20agendamento!" target="_blank" class="text-fmg-red font-black block px-3 py-2 rounded-md text-base uppercase italic">Agendar Agora</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative h-screen flex items-center overflow-hidden">
+        <!-- Background Image -->
+        <div class="absolute inset-0 z-0">
+            <img src="/assets/images/fachada.webp" alt="Fachada France Motors" class="w-full h-full object-cover">
+            <div class="absolute inset-0 hero-gradient"></div>
+        </div>
+
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+            <div class="lg:w-2/3">
+                <div class="inline-block px-4 py-1 mb-4 border border-fmg-red/50 rounded-full bg-fmg-red/10 backdrop-blur-sm">
+                    <span class="text-fmg-red font-tech font-extrabold tracking-widest uppercase text-xs md:text-sm">Oficina Especializada</span>
+                </div>
+                <!-- Alterado de text-5xl md:text-7xl para text-4xl md:text-6xl -->
+                <h1 class="text-4xl md:text-6xl font-extrabold font-tech text-white leading-tight mb-6 italic">
+                    Tecnologia e <span class="text-fmg-red">Precisão</span> para o seu veículo.
+                </h1>
+                <p class="text-xl text-gray-300 mb-8 max-w-2xl font-light">
+                    Diagnóstico avançado, transparência total e peças originais. A referência em manutenção Renault, Peugeot, Citroën, DS, Jeep e Fiat.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <a href="https://wa.me/5511956503249?text=Ol%C3%A1%20vim%20do%20Site%20e%20quero%20fazer%20um%20agendamento!" target="_blank" class="flex items-center justify-center gap-2 bg-fmg-red hover:bg-red-700 text-white px-8 py-4 rounded font-tech font-black uppercase tracking-wider transition-all shadow-lg shadow-red-900/50 italic">
+                        <i data-lucide="calendar-check"></i> Agendar Visita
+                    </a>
+                    <a href="#youtube" class="flex items-center justify-center gap-2 border border-white hover:bg-white hover:text-fmg-dark text-white px-8 py-4 rounded font-tech font-bold uppercase tracking-wider transition-all">
+                        <i data-lucide="play-circle"></i> Ver Vídeos
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Infinite Carousel Brands -->
+    <section id="brands" class="py-10 bg-fmg-gray border-y border-white/5 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 mb-4">
+            <h3 class="text-center font-tech text-gray-400 uppercase tracking-[0.2em] text-sm font-bold">Marcas Especializadas</h3>
+        </div>
+        <!-- Adicionado whitespace-nowrap para segurança extra -->
+        <div class="relative flex overflow-x-hidden group whitespace-nowrap">
+            <!-- Container 1: Adicionado shrink-0, min-w-full e gap-16 -->
+            <div class="animate-infinite-scroll flex items-center gap-16 shrink-0 min-w-full pr-16">
+                <!-- Logos Loop 1 -->
+                <img src="/assets/images/montadoras/Renault-Branco.png" alt="Renault" class="h-16 w-auto object-contain opacity-70 hover:opacity-100 transition-opacity">
+                <img src="/assets/images/montadoras/Peugeot-Branco.png" alt="Peugeot" class="h-16 w-auto object-contain opacity-70 hover:opacity-100 transition-opacity">
+                <img src="/assets/images/montadoras/Citroen.png" alt="Citroen" class="h-14 w-auto object-contain opacity-70 hover:opacity-100 transition-opacity">
+                <img src="/assets/images/montadoras/DS-Mobile.png" alt="DS" class="h-14 w-auto object-contain opacity-70 hover:opacity-100 transition-opacity">
+                <img src="/assets/images/montadoras/Jeep.png" alt="Jeep" class="h-12 w-auto object-contain opacity-70 hover:opacity-100 transition-opacity">
+                <img src="/assets/images/montadoras/FIAT.png" alt="Fiat" class="h-14 w-auto object-contain opacity-70 hover:opacity-100 transition-opacity">
+                
+                <!-- Logos Loop 2 (Duplicate for width) -->
+                <img src="/assets/images/montadoras/Renault-Branco.png" alt="Renault" class="h-16 w-auto object-contain opacity-70 hover:opacity-100 transition-opacity">
+                <img src="/assets/images/montadoras/Peugeot-Branco.png" alt="Peugeot" class="h-16 w-auto object-contain opacity-70 hover:opacity-100 transition-opacity">
+                <img src="/assets/images/montadoras/Citroen.png" alt="Citroen" class="h-14 w-auto object-contain opacity-70 hover:opacity-100 transition-opacity">
+                <img src="/assets/images/montadoras/DS-Mobile.png" alt="DS" class="h-14 w-auto object-contain opacity-70 hover:opacity-100 transition-opacity">
+                <img src="/assets/images/montadoras/Jeep.png" alt="Jeep" class="h-12 w-auto object-contain opacity-70 hover:opacity-100 transition-opacity">
+                <img src="/assets/images/montadoras/FIAT.png" alt="Fiat" class="h-14 w-auto object-contain opacity-70 hover:opacity-100 transition-opacity">
+            </div>
+
+            <!-- Container 2 (Duplicate for Seamless Loop): Adicionado shrink-0, min-w-full e gap-16 -->
+            <div class="animate-infinite-scroll flex items-center gap-16 shrink-0 min-w-full pr-16" aria-hidden="true">
+                <!-- Logos Loop 1 -->
+                <img src="/assets/images/montadoras/Renault-Branco.png" alt="Renault" class="h-16 w-auto object-contain opacity-70 hover:opacity-100 transition-opacity">
+                <img src="/assets/images/montadoras/Peugeot-Branco.png" alt="Peugeot" class="h-16 w-auto object-contain opacity-70 hover:opacity-100 transition-opacity">
+                <img src="/assets/images/montadoras/Citroen.png" alt="Citroen" class="h-14 w-auto object-contain opacity-70 hover:opacity-100 transition-opacity">
+                <img src="/assets/images/montadoras/DS-Mobile.png" alt="DS" class="h-14 w-auto object-contain opacity-70 hover:opacity-100 transition-opacity">
+                <img src="/assets/images/montadoras/Jeep.png" alt="Jeep" class="h-12 w-auto object-contain opacity-70 hover:opacity-100 transition-opacity">
+                <img src="/assets/images/montadoras/FIAT.png" alt="Fiat" class="h-14 w-auto object-contain opacity-70 hover:opacity-100 transition-opacity">
+                <!-- Logos Loop 2 -->
+                <img src="/assets/images/montadoras/Renault-Branco.png" alt="Renault" class="h-16 w-auto object-contain opacity-70 hover:opacity-100 transition-opacity">
+                <img src="/assets/images/montadoras/Peugeot-Branco.png" alt="Peugeot" class="h-16 w-auto object-contain opacity-70 hover:opacity-100 transition-opacity">
+                <img src="/assets/images/montadoras/Citroen.png" alt="Citroen" class="h-14 w-auto object-contain opacity-70 hover:opacity-100 transition-opacity">
+                <img src="/assets/images/montadoras/DS-Mobile.png" alt="DS" class="h-14 w-auto object-contain opacity-70 hover:opacity-100 transition-opacity">
+                <img src="/assets/images/montadoras/Jeep.png" alt="Jeep" class="h-12 w-auto object-contain opacity-70 hover:opacity-100 transition-opacity">
+                <img src="/assets/images/montadoras/FIAT.png" alt="Fiat" class="h-14 w-auto object-contain opacity-70 hover:opacity-100 transition-opacity">
+            </div>
+        </div>
+
+        <!-- Seção de Parceiro -->
+        <div class="mt-16 max-w-4xl mx-auto px-4 text-center border-t border-white/5 pt-10">
+            <h3 class="text-2xl md:text-3xl font-extrabold font-tech text-white mb-3">
+                Seu carro é de outra Marca importada?
+            </h3>
+            <p class="text-gray-400 mb-8 font-light text-lg">
+                Não se preocupe, temos um parceiro que atende no mesmo padrão de qualidade!
+            </p>
+            <a href="https://commanderimports.com.br/" target="_blank" class="inline-flex items-center gap-2 border border-fmg-red text-fmg-red hover:bg-fmg-red hover:text-white px-8 py-3 rounded font-tech font-bold uppercase tracking-wide transition-all hover:shadow-[0_0_20px_rgba(230,0,0,0.4)]">
+                Conheça a Commander Imports <i data-lucide="external-link" class="w-4 h-4"></i>
+            </a>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section id="team" class="py-20 bg-fmg-dark relative border-t border-white/5">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <span class="text-fmg-red font-bold tracking-widest uppercase text-sm">Quem faz acontecer</span>
+                <h2 class="text-3xl md:text-4xl font-extrabold font-tech text-white mt-2">Nossa <span class="text-fmg-red">Equipe</span></h2>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
+                <!-- Jhow -->
+                <div class="group relative overflow-hidden rounded-lg bg-fmg-gray border border-white/5 hover:border-fmg-red/50 transition-all duration-300">
+                    <div class="aspect-[3/4] overflow-hidden">
+                        <img src="/assets/images/equipe/jhow.jpg" alt="Jhow" class="w-full h-full object-cover scale-100 group-hover:scale-110 transition-all duration-500">
+                    </div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-90"></div>
+                    <div class="absolute bottom-0 left-0 w-full p-4">
+                        <h3 class="text-xl font-bold font-tech text-white">Jhow</h3>
+                        <p class="text-fmg-red text-xs font-bold uppercase tracking-wider">Proprietário & Mecânico</p>
+                    </div>
+                </div>
+
+                <!-- Hector -->
+                <div class="group relative overflow-hidden rounded-lg bg-fmg-gray border border-white/5 hover:border-fmg-red/50 transition-all duration-300">
+                    <div class="aspect-[3/4] overflow-hidden">
+                        <img src="/assets/images/equipe/hector.jpg" alt="Hector" class="w-full h-full object-cover scale-100 group-hover:scale-110 transition-all duration-500">
+                    </div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-90"></div>
+                    <div class="absolute bottom-0 left-0 w-full p-4">
+                        <h3 class="text-xl font-bold font-tech text-white">Hector</h3>
+                        <p class="text-fmg-red text-xs font-bold uppercase tracking-wider">Chefe de Oficina</p>
+                    </div>
+                </div>
+
+                <!-- Wellington -->
+                <div class="group relative overflow-hidden rounded-lg bg-fmg-gray border border-white/5 hover:border-fmg-red/50 transition-all duration-300">
+                    <div class="aspect-[3/4] overflow-hidden">
+                        <img src="/assets/images/equipe/well.jpg" alt="Wellington" class="w-full h-full object-cover scale-100 group-hover:scale-110 transition-all duration-500">
+                    </div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-90"></div>
+                    <div class="absolute bottom-0 left-0 w-full p-4">
+                        <h3 class="text-xl font-bold font-tech text-white">Wellington</h3>
+                        <p class="text-fmg-red text-xs font-bold uppercase tracking-wider">Mecânico</p>
+                    </div>
+                </div>
+
+                <!-- Julio -->
+                <div class="group relative overflow-hidden rounded-lg bg-fmg-gray border border-white/5 hover:border-fmg-red/50 transition-all duration-300">
+                    <div class="aspect-[3/4] overflow-hidden">
+                        <img src="/assets/images/equipe/julio.jpg" alt="Julio" class="w-full h-full object-cover scale-100 group-hover:scale-110 transition-all duration-500">
+                    </div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-90"></div>
+                    <div class="absolute bottom-0 left-0 w-full p-4">
+                        <h3 class="text-xl font-bold font-tech text-white">Julio</h3>
+                        <p class="text-fmg-red text-xs font-bold uppercase tracking-wider">Mecânico</p>
+                    </div>
+                </div>
+
+                <!-- Alexandre -->
+                <div class="group relative overflow-hidden rounded-lg bg-fmg-gray border border-white/5 hover:border-fmg-red/50 transition-all duration-300">
+                    <div class="aspect-[3/4] overflow-hidden">
+                        <img src="/assets/images/equipe/ale.jpg" alt="Alexandre" class="w-full h-full object-cover scale-100 group-hover:scale-110 transition-all duration-500">
+                    </div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-90"></div>
+                    <div class="absolute bottom-0 left-0 w-full p-4">
+                        <h3 class="text-xl font-bold font-tech text-white">Alexandre</h3>
+                        <p class="text-fmg-red text-xs font-bold uppercase tracking-wider">Mecânico</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Store Section -->
+    <section id="store" class="py-20 bg-black relative overflow-hidden">
+        <div class="absolute top-0 right-0 w-1/2 h-full bg-fmg-red/5 skew-x-12 pointer-events-none"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div class="order-2 lg:order-1 relative">
+                    <div class="absolute inset-0 bg-fmg-red blur-[100px] opacity-20"></div>
+                    <img src="/assets/images/pecas.png" alt="Peças Originais vs Falsas" class="relative z-10 w-full drop-shadow-2xl hover:scale-105 transition-transform duration-500 border-4 border-fmg-gray rounded-xl shadow-[0_0_30px_rgba(230,0,0,0.2)]">
+                </div>
+                <div class="order-1 lg:order-2">
+                    <h2 class="text-4xl font-extrabold font-tech mb-4"><span class="text-fmg-red">France Motors</span> STORE</h2>
+                    <h3 class="text-2xl text-white mb-6">Precisa de Peças de Confiança?</h3>
+                    <p class="text-gray-400 mb-6 leading-relaxed">
+                        Não arrisque a integridade do seu veículo com peças de procedência duvidosa. Na France Motors Store, garantimos a qualidade e originalidade que seu carro merece.
+                    </p>
+                    <ul class="space-y-4 mb-8 text-gray-300">
+                        <li class="flex items-center gap-3"><i data-lucide="check-circle" class="text-fmg-red"></i> Peças 100% Originais e OEM</li>
+                        <li class="flex items-center gap-3"><i data-lucide="check-circle" class="text-fmg-red"></i> Garantia de compatibilidade</li>
+                        <li class="flex items-center gap-3"><i data-lucide="check-circle" class="text-fmg-red"></i> Envio rápido e seguro</li>
+                    </ul>
+                    <a href="https://wa.me/5511956537606?text=Ol%C3%A1%20vim%20do%20site%20e%20quero%20cotar%20pe%C3%A7as!" target="_blank" class="inline-flex items-center gap-2 bg-green-600 hover:bg-green-700 text-white px-8 py-3 rounded font-bold transition-all font-tech uppercase tracking-wide">
+                        <i data-lucide="message-circle"></i> Comprar Peças no WhatsApp
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- YouTube Section -->
+    <section id="youtube" class="py-20 bg-fmg-gray">
+        <div class="max-w-4xl mx-auto px-4 text-center">
+            <h2 class="text-3xl md:text-4xl font-extrabold font-tech mb-2">Canal France Motors</h2>
+            <p class="text-gray-400 mb-10">Acompanhe nossos diagnósticos, dicas e o dia a dia da oficina.</p>
+            
+            <div class="relative w-full aspect-video rounded-xl overflow-hidden border-2 border-fmg-red/30 shadow-[0_0_30px_rgba(230,0,0,0.15)] group">
+                <!-- Adicionado o parâmetro ?vq=hd1080 para sugerir alta qualidade -->
+                <iframe class="w-full h-full" src="https://www.youtube.com/embed/Dzb9ckquZ2U?vq=hd1080" title="France Motors YouTube Video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div>
+            
+            <div class="mt-8">
+                <a href="https://www.youtube.com/@francemotorsgarage" target="_blank" class="text-fmg-red hover:text-white font-bold inline-flex items-center gap-2 transition-colors font-tech uppercase tracking-wide">
+                    VISITAR CANAL COMPLETO <i data-lucide="arrow-right"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews Section -->
+    <section id="reviews" class="py-20 bg-fmg-dark relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <div class="flex justify-center mb-4 text-fmg-red">
+                    <i data-lucide="star" class="fill-current w-6 h-6"></i>
+                    <i data-lucide="star" class="fill-current w-6 h-6"></i>
+                    <i data-lucide="star" class="fill-current w-6 h-6"></i>
+                    <i data-lucide="star" class="fill-current w-6 h-6"></i>
+                    <i data-lucide="star" class="fill-current w-6 h-6"></i>
+                </div>
+                <h2 class="text-3xl md:text-4xl font-extrabold font-tech">O que nossos clientes dizem</h2>
+            </div>
+
+            <!-- Review Grid (Scrolling on mobile, grid on desktop) -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 auto-rows-fr">
+                <!-- Review 1 -->
+                <div class="glass-card p-8 rounded-lg hover:border-fmg-red/50 transition-colors">
+                    <div class="flex items-center mb-4">
+                        <div class="w-10 h-10 rounded-full bg-gradient-to-br from-gray-700 to-gray-900 flex items-center justify-center font-bold text-fmg-red">DP</div>
+                        <div class="ml-3">
+                            <h4 class="font-bold text-white">Douglas Pedroso</h4>
+                            <span class="text-xs text-gray-500">Cliente Verificado</span>
+                        </div>
+                    </div>
+                    <div class="flex text-yellow-500 mb-3 gap-1">
+                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                    </div>
+                    <p class="text-gray-300 text-sm italic">"Meu carro apresentou luz de anomalia de cambio e fizeram o diagnóstico correto... sem custos desnecessários, foram muito honestos. O carro ficou excelente!!!!"</p>
+                </div>
+
+                <!-- Review 2 -->
+                <div class="glass-card p-8 rounded-lg hover:border-fmg-red/50 transition-colors">
+                    <div class="flex items-center mb-4">
+                        <div class="w-10 h-10 rounded-full bg-gradient-to-br from-gray-700 to-gray-900 flex items-center justify-center font-bold text-fmg-red">MS</div>
+                        <div class="ml-3">
+                            <h4 class="font-bold text-white">Mauricio Silva</h4>
+                            <span class="text-xs text-gray-500">Cliente Verificado</span>
+                        </div>
+                    </div>
+                    <div class="flex text-yellow-500 mb-3 gap-1">
+                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                    </div>
+                    <p class="text-gray-300 text-sm italic">"Entrei em contato e fui muito bem atendido e tive muitas dúvidas sanadas. Agradeço pela transparência e sinceridade."</p>
+                </div>
+
+                <!-- Review 3 -->
+                <div class="glass-card p-8 rounded-lg hover:border-fmg-red/50 transition-colors">
+                    <div class="flex items-center mb-4">
+                        <div class="w-10 h-10 rounded-full bg-gradient-to-br from-gray-700 to-gray-900 flex items-center justify-center font-bold text-fmg-red">VR</div>
+                        <div class="ml-3">
+                            <h4 class="font-bold text-white">Victor Rondon</h4>
+                            <span class="text-xs text-gray-500">Cliente Verificado</span>
+                        </div>
+                    </div>
+                    <div class="flex text-yellow-500 mb-3 gap-1">
+                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                    </div>
+                    <p class="text-gray-300 text-sm italic">"Sempre atenciosos, serviço perfeito e rápido. Realmente possuem o conhecimento técnico avançado dos franceses."</p>
+                </div>
+
+                <!-- Review 4 -->
+                <div class="glass-card p-8 rounded-lg hover:border-fmg-red/50 transition-colors">
+                    <div class="flex items-center mb-4">
+                        <div class="w-10 h-10 rounded-full bg-gradient-to-br from-gray-700 to-gray-900 flex items-center justify-center font-bold text-fmg-red">JM</div>
+                        <div class="ml-3">
+                            <h4 class="font-bold text-white">Jenifer de Marcena</h4>
+                            <span class="text-xs text-gray-500">Cliente Verificado</span>
+                        </div>
+                    </div>
+                    <div class="flex text-yellow-500 mb-3 gap-1">
+                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                    </div>
+                    <p class="text-gray-300 text-sm italic">"De longe é a melhor especializada em francês da região do ABC/Capital. O Jhonathan foi comigo fazer uma avaliação do carro antes mesmo de fechar o negócio... firmeza demais."</p>
+                </div>
+
+                <!-- Review 5 -->
+                <div class="glass-card p-8 rounded-lg hover:border-fmg-red/50 transition-colors">
+                    <div class="flex items-center mb-4">
+                        <div class="w-10 h-10 rounded-full bg-gradient-to-br from-gray-700 to-gray-900 flex items-center justify-center font-bold text-fmg-red">AJ</div>
+                        <div class="ml-3">
+                            <h4 class="font-bold text-white">Adriano Jesus</h4>
+                            <span class="text-xs text-gray-500">Cliente Verificado</span>
+                        </div>
+                    </div>
+                    <div class="flex text-yellow-500 mb-3 gap-1">
+                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                    </div>
+                    <p class="text-gray-300 text-sm italic">"Excelente atendimento, dispensou tempo para entender os problemas... Teve atenção aos detalhes (entregou o carro limpo inclusive)."</p>
+                </div>
+
+                <!-- Review 6 -->
+                <div class="glass-card p-8 rounded-lg hover:border-fmg-red/50 transition-colors">
+                    <div class="flex items-center mb-4">
+                        <div class="w-10 h-10 rounded-full bg-gradient-to-br from-gray-700 to-gray-900 flex items-center justify-center font-bold text-fmg-red">BV</div>
+                        <div class="ml-3">
+                            <h4 class="font-bold text-white">Beatriz Vezzaro</h4>
+                            <span class="text-xs text-gray-500">Cliente Verificado</span>
+                        </div>
+                    </div>
+                    <div class="flex text-yellow-500 mb-3 gap-1">
+                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                    </div>
+                    <p class="text-gray-300 text-sm italic">"Indico de olhos fechados para quem tem carro francês. Eles explicam tudo que precisa ser feito, com fotos e vídeos... fazem o que tem que ser feito, sem inventar coisa."</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-20 bg-fmg-gray">
+        <div class="max-w-3xl mx-auto px-4">
+            <h2 class="text-3xl font-extrabold font-tech text-center mb-10"><span class="text-fmg-red">Perguntas</span> Frequentes</h2>
+            
+            <div class="space-y-4">
+                <details class="faq-details bg-fmg-dark rounded-lg border border-white/5 group">
+                    <summary class="list-none flex justify-between items-center p-5 cursor-pointer font-bold hover:text-fmg-red transition-colors">
+                        Preciso agendar antes de levar meu carro?
+                        <span class="transition-transform group-open:rotate-180"><i data-lucide="chevron-down"></i></span>
+                    </summary>
+                    <div class="p-5 pt-0 text-gray-400 border-t border-white/5 mt-2">
+                        Sim, não trabalhamos de portas abertas. Todos os carros precisam agendar a visita para garantir um atendimento dedicado.
+                    </div>
+                </details>
+
+                <details class="faq-details bg-fmg-dark rounded-lg border border-white/5 group">
+                    <summary class="list-none flex justify-between items-center p-5 cursor-pointer font-bold hover:text-fmg-red transition-colors">
+                        Posso levar as Peças?
+                        <span class="transition-transform group-open:rotate-180"><i data-lucide="chevron-down"></i></span>
+                    </summary>
+                    <div class="p-5 pt-0 text-gray-400 border-t border-white/5 mt-2">
+                        Não, a France Motors Garage não aceita peças de fora, apenas em casos específicos mediante a nota fiscal da peça e prévia autorização.
+                    </div>
+                </details>
+
+                <details class="faq-details bg-fmg-dark rounded-lg border border-white/5 group">
+                    <summary class="list-none flex justify-between items-center p-5 cursor-pointer font-bold hover:text-fmg-red transition-colors">
+                        Posso esperar enquanto faz?
+                        <span class="transition-transform group-open:rotate-180"><i data-lucide="chevron-down"></i></span>
+                    </summary>
+                    <div class="p-5 pt-0 text-gray-400 border-t border-white/5 mt-2">
+                        A grande maioria dos serviços não são feitos no mesmo dia, mas podem ocorrer situações que sim. Chame no agendamento para verificar seu caso.
+                    </div>
+                </details>
+
+                <details class="faq-details bg-fmg-dark rounded-lg border border-white/5 group">
+                    <summary class="list-none flex justify-between items-center p-5 cursor-pointer font-bold hover:text-fmg-red transition-colors">
+                        Vocês podem me mostrar a peça velha?
+                        <span class="transition-transform group-open:rotate-180"><i data-lucide="chevron-down"></i></span>
+                    </summary>
+                    <div class="p-5 pt-0 text-gray-400 border-t border-white/5 mt-2">
+                        Sim, todos os clientes têm o direito de levar as peças velhas embora. Nossa equipe sempre separa e só descarta após autorização do cliente.
+                    </div>
+                </details>
+
+                <details class="faq-details bg-fmg-dark rounded-lg border border-white/5 group">
+                    <summary class="list-none flex justify-between items-center p-5 cursor-pointer font-bold hover:text-fmg-red transition-colors">
+                        Tem garantia no serviço?
+                        <span class="transition-transform group-open:rotate-180"><i data-lucide="chevron-down"></i></span>
+                    </summary>
+                    <div class="p-5 pt-0 text-gray-400 border-t border-white/5 mt-2">
+                        Sim! Oferecemos no mínimo 6 meses de garantia nos serviços executados.
+                    </div>
+                </details>
+
+                <details class="faq-details bg-fmg-dark rounded-lg border border-white/5 group">
+                    <summary class="list-none flex justify-between items-center p-5 cursor-pointer font-bold hover:text-fmg-red transition-colors">
+                        Vocês fazem diagnóstico sem compromisso?
+                        <span class="transition-transform group-open:rotate-180"><i data-lucide="chevron-down"></i></span>
+                    </summary>
+                    <div class="p-5 pt-0 text-gray-400 border-t border-white/5 mt-2">
+                        Não. Nossos diagnósticos são cobrados caso o serviço não seja executado. Se o orçamento for aprovado, o valor do diagnóstico é abatido.
+                    </div>
+                </details>
+            </div>
+        </div>
+    </section>
+
+    <!-- Location & Contact -->
+    <section id="contact" class="grid grid-cols-1 lg:grid-cols-2">
+        <div class="h-96 lg:h-auto w-full">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3653.334659674078!2d-46.53160562466567!3d-23.69974027870504!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce421cb7f688cf%3A0xed87c8de53ffc2b4!2sFrance%20Motors%20Garage!5e0!3m2!1spt-BR!2sbr!4v1765223500467!5m2!1spt-BR!2sbr" class="w-full h-full grayscale hover:grayscale-0 transition-all duration-500" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+        <div class="bg-black p-12 lg:p-20 flex flex-col justify-center">
+            <h2 class="text-3xl font-extrabold font-tech text-white mb-6">Entre em Contato</h2>
+            <div class="space-y-6">
+                <div class="flex items-start gap-4">
+                    <div class="p-3 bg-fmg-red/10 rounded-full text-fmg-red"><i data-lucide="map-pin"></i></div>
+                    <div>
+                        <h4 class="font-bold text-lg">Localização</h4>
+                        <p class="text-gray-400">Verifique no mapa ao lado.<br>Fácil acesso na região do ABC.</p>
+                    </div>
+                </div>
+                
+                <div class="flex items-start gap-4">
+                    <div class="p-3 bg-fmg-red/10 rounded-full text-fmg-red"><i data-lucide="phone"></i></div>
+                    <div>
+                        <h4 class="font-bold text-lg">Oficina (Agendamento)</h4>
+                        <p class="text-gray-400">Whatsapp: (11) 95650-3249</p>
+                        <a href="https://wa.me/5511956503249?text=Ol%C3%A1%20vim%20do%20Site%20e%20quero%20fazer%20um%20agendamento!" target="_blank" class="text-fmg-red text-sm font-bold mt-1 inline-block hover:underline">Iniciar Conversa &rarr;</a>
+                    </div>
+                </div>
+
+                <div class="flex items-start gap-4">
+                    <div class="p-3 bg-fmg-red/10 rounded-full text-fmg-red"><i data-lucide="shopping-bag"></i></div>
+                    <div>
+                        <h4 class="font-bold text-lg">France Motors Store (Peças)</h4>
+                        <p class="text-gray-400">Whatsapp: (11) 95653-7606</p>
+                        <a href="https://wa.me/5511956537606?text=Ol%C3%A1%20vim%20do%20site%20e%20quero%20cotar%20pe%C3%A7as!" target="_blank" class="text-fmg-red text-sm font-bold mt-1 inline-block hover:underline">Cotar Peças &rarr;</a>
+                    </div>
+                </div>
+
+                <div class="flex items-start gap-4">
+                    <div class="p-3 bg-fmg-red/10 rounded-full text-fmg-red"><i data-lucide="credit-card"></i></div>
+                    <div>
+                        <h4 class="font-bold text-lg">Pagamento Facilitado</h4>
+                        <p class="text-gray-400">PIX, Cartão de Crédito e Parcelamento. Consulte condições no agendamento.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black py-8 border-t border-white/10">
+        <div class="max-w-7xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-4">
+            <p class="text-gray-500 text-sm">© 2025 France Motors Garage. Todos os direitos reservados.</p>
+            <div class="flex space-x-6 text-gray-500">
+                <a href="https://www.instagram.com/francemotorsgarage/" target="_blank" class="hover:text-fmg-red"><i data-lucide="instagram"></i></a>
+                <a href="https://www.youtube.com/@francemotorsgarage" target="_blank" class="hover:text-fmg-red"><i data-lucide="youtube"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating Whatsapp -->
+    <a href="https://wa.me/5511956503249?text=Ol%C3%A1%20vim%20do%20Site%20e%20quero%20fazer%20um%20agendamento!" target="_blank" class="fixed bottom-6 right-6 z-50 bg-green-500 text-white p-4 rounded-full shadow-lg hover:bg-green-600 transition-all hover:scale-110 flex items-center gap-2 group">
+        <i data-lucide="message-circle" class="w-8 h-8"></i>
+        <span class="max-w-0 overflow-hidden group-hover:max-w-xs transition-all duration-500 ease-in-out whitespace-nowrap font-bold">Agendar Agora</span>
+    </a>
+
+    <!-- Controle de Áudio - Turbo Compressor -->
+    <button id="audio-control" class="fixed bottom-6 left-6 z-50 bg-fmg-gray/90 backdrop-blur text-white p-3 rounded-full border border-white/10 hover:border-fmg-red hover:text-fmg-red transition-all shadow-lg group flex items-center justify-center" title="Acelerar">
+        <div class="relative w-8 h-8">
+            <!-- Carcaça do Turbo (Estática) -->
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="w-full h-full absolute inset-0 text-gray-400 group-hover:text-fmg-red transition-colors">
+                <path d="M12 22a10 10 0 1 0 0-20 10 10 0 0 0 0 20z"></path>
+                <path d="M12 12m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0" class="opacity-50"></path>
+            </svg>
+            
+            <!-- Hélice do Compressor (Giratória) -->
+            <svg id="turbo-fan" viewBox="0 0 24 24" fill="currentColor" class="w-full h-full absolute inset-0 text-white p-[5px] origin-center">
+                <g>
+                    <path d="M12 12 L12 4 C14 4 15 5 16 6 L12 12"></path>
+                    <path d="M12 12 L18.9 8 C18.5 10 18 11 17 12 L12 12"></path>
+                    <path d="M12 12 L18.9 16 C18 17 17 18 16 18.5 L12 12"></path>
+                    <path d="M12 12 L12 20 C10 20 9 19 8 18 L12 12"></path>
+                    <path d="M12 12 L5.1 16 C5.5 14 6 13 7 12 L12 12"></path>
+                    <path d="M12 12 L5.1 8 C6 7 7 6 8 5.5 L12 12"></path>
+                    <circle cx="12" cy="12" r="1.5"></circle>
+                </g>
+            </svg>
+        </div>
+        <span class="absolute left-full ml-2 px-2 py-1 bg-black text-xs rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap font-tech font-bold tracking-wider">Acelerar (Turbo)</span>
+    </button>
+
+    <script>
+        // Initialize Icons
+        lucide.createIcons();
+
+        // Engine Rev Sound Synthesis (Web Audio API)
+        const audioControl = document.getElementById('audio-control');
+        const turboFan = document.getElementById('turbo-fan'); // Elemento da hélice
+        let audioCtx;
+        let isPlaying = false;
+
+        function initAudio() {
+            if (!audioCtx) {
+                const AudioContext = window.AudioContext || window.webkitAudioContext;
+                audioCtx = new AudioContext();
+            }
+        }
+
+        function playRevSound() {
+            if (isPlaying) return;
+            initAudio();
+            
+            if (audioCtx.state === 'suspended') {
+                audioCtx.resume();
+            }
+
+            isPlaying = true;
+            
+            // Ativa a animação de rotação do turbo
+            turboFan.classList.add('spin-turbo-active');
+            
+            // Visual feedback no botão
+            audioControl.classList.add('border-fmg-red', 'scale-110');
+
+            const now = audioCtx.currentTime;
+            const duration = 2.0; // Duração total do efeito
+
+            // Reset visual após o som
+            setTimeout(() => {
+                turboFan.classList.remove('spin-turbo-active');
+                audioControl.classList.remove('border-fmg-red', 'scale-110');
+                isPlaying = false;
+            }, duration * 1000);
+
+            // --- SÍNTESE DO SOM (Mesma lógica anterior) ---
+            
+            // Master Gain (Volume Envelope)
+            const masterGain = audioCtx.createGain();
+            masterGain.connect(audioCtx.destination);
+            
+            // Envelope de Volume
+            masterGain.gain.setValueAtTime(0, now);
+            masterGain.gain.linearRampToValueAtTime(0.3, now + 0.1); 
+            masterGain.gain.exponentialRampToValueAtTime(0.01, now + duration);
+
+            // Filtro Lowpass (Corpo do motor)
+            const filter = audioCtx.createBiquadFilter();
+            filter.type = 'lowpass';
+            filter.frequency.setValueAtTime(200, now);
+            filter.frequency.linearRampToValueAtTime(800, now + 0.3); // Turbo abre mais agudo
+            filter.frequency.linearRampToValueAtTime(200, now + 1.5); 
+            filter.connect(masterGain);
+
+            // Osciladores
+            const freqs = [50, 52, 100]; 
+            const types = ['sawtooth', 'square', 'sawtooth'];
+
+            freqs.forEach((f, i) => {
+                const osc = audioCtx.createOscillator();
+                osc.type = types[i];
+                osc.frequency.setValueAtTime(f, now);
+                osc.frequency.exponentialRampToValueAtTime(f * 4.5, now + 0.3); // Acelerada rápida
+                osc.frequency.exponentialRampToValueAtTime(f, now + 1.8);
+                osc.connect(filter);
+                osc.start(now);
+                osc.stop(now + duration);
+            });
+
+            // Adicionar silvo do Turbo (High pitch whistle)
+            const turboOsc = audioCtx.createOscillator();
+            turboOsc.type = 'sine';
+            turboOsc.frequency.setValueAtTime(1000, now);
+            turboOsc.frequency.exponentialRampToValueAtTime(4000, now + 0.3); // Spool up
+            turboOsc.frequency.exponentialRampToValueAtTime(500, now + 2.0); // Spool down
+            
+            const turboGain = audioCtx.createGain();
+            turboGain.gain.setValueAtTime(0, now);
+            turboGain.gain.linearRampToValueAtTime(0.05, now + 0.3);
+            turboGain.gain.linearRampToValueAtTime(0, now + 1.5);
+            
+            turboOsc.connect(turboGain);
+            turboGain.connect(audioCtx.destination); // Conecta direto para manter agudo
+            turboOsc.start(now);
+            turboOsc.stop(now + duration);
+
+            // Noise (Escape)
+            const bufferSize = audioCtx.sampleRate * duration;
+            const buffer = audioCtx.createBuffer(1, bufferSize, audioCtx.sampleRate);
+            const data = buffer.getChannelData(0);
+            for (let i = 0; i < bufferSize; i++) {
+                data[i] = Math.random() * 2 - 1;
+            }
+            const noise = audioCtx.createBufferSource();
+            noise.buffer = buffer;
+            const noiseGain = audioCtx.createGain();
+            noiseGain.gain.setValueAtTime(0.05, now);
+            noiseGain.gain.linearRampToValueAtTime(0, now + duration);
+            noise.connect(noiseGain);
+            noiseGain.connect(filter);
+            noise.start(now);
+        }
+
+        // Botão manual
+        audioControl.addEventListener('click', (e) => {
+            e.stopPropagation();
+            playRevSound();
+        });
+
+    </script>
+</body>
+</html>
