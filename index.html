@@ -11,7 +11,6 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <!-- Trocando Chakra Petch por Exo 2 para um visual mais moderno e automotivo -->
     <link href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,300;0,400;0,600;0,700;0,800;1,700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
     
     <!-- Icons -->
@@ -31,7 +30,7 @@
                     },
                     fontFamily: {
                         sans: ['Inter', 'sans-serif'],
-                        tech: ['"Exo 2"', 'sans-serif'], // Fonte atualizada
+                        tech: ['"Exo 2"', 'sans-serif'],
                     },
                     animation: {
                         'infinite-scroll': 'infinite-scroll 25s linear infinite',
@@ -132,7 +131,6 @@
 
     <!-- Hero Section -->
     <section id="home" class="relative h-screen flex items-center overflow-hidden">
-        <!-- Background Image -->
         <div class="absolute inset-0 z-0">
             <img src="/assets/images/fachada.webp" alt="Fachada France Motors" class="w-full h-full object-cover">
             <div class="absolute inset-0 hero-gradient"></div>
@@ -143,7 +141,6 @@
                 <div class="inline-block px-4 py-1 mb-4 border border-fmg-red/50 rounded-full bg-fmg-red/10 backdrop-blur-sm">
                     <span class="text-fmg-red font-tech font-extrabold tracking-widest uppercase text-xs md:text-sm">Oficina Especializada</span>
                 </div>
-                <!-- Alterado de text-5xl md:text-7xl para text-4xl md:text-6xl -->
                 <h1 class="text-4xl md:text-6xl font-extrabold font-tech text-white leading-tight mb-6 italic">
                     Tecnologia e <span class="text-fmg-red">Precisão</span> para o seu veículo.
                 </h1>
@@ -167,11 +164,8 @@
         <div class="max-w-7xl mx-auto px-4 mb-4">
             <h3 class="text-center font-tech text-gray-400 uppercase tracking-[0.2em] text-sm font-bold">Marcas Especializadas</h3>
         </div>
-        <!-- Adicionado whitespace-nowrap para segurança extra -->
         <div class="relative flex overflow-x-hidden group whitespace-nowrap">
-            <!-- Container 1: Adicionado shrink-0, min-w-full e gap-16 -->
             <div class="animate-infinite-scroll flex items-center gap-16 shrink-0 min-w-full pr-16">
-                <!-- Logos Loop 1 -->
                 <img src="/assets/images/montadoras/Renault-Branco.png" alt="Renault" class="h-16 w-auto object-contain opacity-70 hover:opacity-100 transition-opacity">
                 <img src="/assets/images/montadoras/Peugeot-Branco.png" alt="Peugeot" class="h-16 w-auto object-contain opacity-70 hover:opacity-100 transition-opacity">
                 <img src="/assets/images/montadoras/Citroen.png" alt="Citroen" class="h-14 w-auto object-contain opacity-70 hover:opacity-100 transition-opacity">
@@ -179,7 +173,6 @@
                 <img src="/assets/images/montadoras/Jeep.png" alt="Jeep" class="h-12 w-auto object-contain opacity-70 hover:opacity-100 transition-opacity">
                 <img src="/assets/images/montadoras/FIAT.png" alt="Fiat" class="h-14 w-auto object-contain opacity-70 hover:opacity-100 transition-opacity">
                 
-                <!-- Logos Loop 2 (Duplicate for width) -->
                 <img src="/assets/images/montadoras/Renault-Branco.png" alt="Renault" class="h-16 w-auto object-contain opacity-70 hover:opacity-100 transition-opacity">
                 <img src="/assets/images/montadoras/Peugeot-Branco.png" alt="Peugeot" class="h-16 w-auto object-contain opacity-70 hover:opacity-100 transition-opacity">
                 <img src="/assets/images/montadoras/Citroen.png" alt="Citroen" class="h-14 w-auto object-contain opacity-70 hover:opacity-100 transition-opacity">
@@ -188,16 +181,14 @@
                 <img src="/assets/images/montadoras/FIAT.png" alt="Fiat" class="h-14 w-auto object-contain opacity-70 hover:opacity-100 transition-opacity">
             </div>
 
-            <!-- Container 2 (Duplicate for Seamless Loop): Adicionado shrink-0, min-w-full e gap-16 -->
             <div class="animate-infinite-scroll flex items-center gap-16 shrink-0 min-w-full pr-16" aria-hidden="true">
-                <!-- Logos Loop 1 -->
                 <img src="/assets/images/montadoras/Renault-Branco.png" alt="Renault" class="h-16 w-auto object-contain opacity-70 hover:opacity-100 transition-opacity">
                 <img src="/assets/images/montadoras/Peugeot-Branco.png" alt="Peugeot" class="h-16 w-auto object-contain opacity-70 hover:opacity-100 transition-opacity">
                 <img src="/assets/images/montadoras/Citroen.png" alt="Citroen" class="h-14 w-auto object-contain opacity-70 hover:opacity-100 transition-opacity">
                 <img src="/assets/images/montadoras/DS-Mobile.png" alt="DS" class="h-14 w-auto object-contain opacity-70 hover:opacity-100 transition-opacity">
                 <img src="/assets/images/montadoras/Jeep.png" alt="Jeep" class="h-12 w-auto object-contain opacity-70 hover:opacity-100 transition-opacity">
                 <img src="/assets/images/montadoras/FIAT.png" alt="Fiat" class="h-14 w-auto object-contain opacity-70 hover:opacity-100 transition-opacity">
-                <!-- Logos Loop 2 -->
+                
                 <img src="/assets/images/montadoras/Renault-Branco.png" alt="Renault" class="h-16 w-auto object-contain opacity-70 hover:opacity-100 transition-opacity">
                 <img src="/assets/images/montadoras/Peugeot-Branco.png" alt="Peugeot" class="h-16 w-auto object-contain opacity-70 hover:opacity-100 transition-opacity">
                 <img src="/assets/images/montadoras/Citroen.png" alt="Citroen" class="h-14 w-auto object-contain opacity-70 hover:opacity-100 transition-opacity">
@@ -207,7 +198,6 @@
             </div>
         </div>
 
-        <!-- Seção de Parceiro -->
         <div class="mt-16 max-w-4xl mx-auto px-4 text-center border-t border-white/5 pt-10">
             <h3 class="text-2xl md:text-3xl font-extrabold font-tech text-white mb-3">
                 Seu carro é de outra Marca importada?
@@ -229,7 +219,7 @@
                 <h2 class="text-3xl md:text-4xl font-extrabold font-tech text-white mt-2">Nossa <span class="text-fmg-red">Equipe</span></h2>
             </div>
 
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
                 <!-- Jhow -->
                 <div class="group relative overflow-hidden rounded-lg bg-fmg-gray border border-white/5 hover:border-fmg-red/50 transition-all duration-300">
                     <div class="aspect-[3/4] overflow-hidden">
@@ -251,18 +241,6 @@
                     <div class="absolute bottom-0 left-0 w-full p-4">
                         <h3 class="text-xl font-bold font-tech text-white">Hector</h3>
                         <p class="text-fmg-red text-xs font-bold uppercase tracking-wider">Chefe de Oficina</p>
-                    </div>
-                </div>
-
-                <!-- Wellington -->
-                <div class="group relative overflow-hidden rounded-lg bg-fmg-gray border border-white/5 hover:border-fmg-red/50 transition-all duration-300">
-                    <div class="aspect-[3/4] overflow-hidden">
-                        <img src="/assets/images/equipe/well.jpg" alt="Wellington" class="w-full h-full object-cover scale-100 group-hover:scale-110 transition-all duration-500">
-                    </div>
-                    <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-90"></div>
-                    <div class="absolute bottom-0 left-0 w-full p-4">
-                        <h3 class="text-xl font-bold font-tech text-white">Wellington</h3>
-                        <p class="text-fmg-red text-xs font-bold uppercase tracking-wider">Mecânico</p>
                     </div>
                 </div>
 
@@ -328,7 +306,6 @@
             <p class="text-gray-400 mb-10">Acompanhe nossos diagnósticos, dicas e o dia a dia da oficina.</p>
             
             <div class="relative w-full aspect-video rounded-xl overflow-hidden border-2 border-fmg-red/30 shadow-[0_0_30px_rgba(230,0,0,0.15)] group">
-                <!-- Adicionado o parâmetro ?vq=hd1080 para sugerir alta qualidade -->
                 <iframe class="w-full h-full" src="https://www.youtube.com/embed/Dzb9ckquZ2U?vq=hd1080" title="France Motors YouTube Video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
             </div>
             
@@ -354,9 +331,7 @@
                 <h2 class="text-3xl md:text-4xl font-extrabold font-tech">O que nossos clientes dizem</h2>
             </div>
 
-            <!-- Review Grid (Scrolling on mobile, grid on desktop) -->
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 auto-rows-fr">
-                <!-- Review 1 -->
                 <div class="glass-card p-8 rounded-lg hover:border-fmg-red/50 transition-colors">
                     <div class="flex items-center mb-4">
                         <div class="w-10 h-10 rounded-full bg-gradient-to-br from-gray-700 to-gray-900 flex items-center justify-center font-bold text-fmg-red">DP</div>
@@ -375,7 +350,6 @@
                     <p class="text-gray-300 text-sm italic">"Meu carro apresentou luz de anomalia de cambio e fizeram o diagnóstico correto... sem custos desnecessários, foram muito honestos. O carro ficou excelente!!!!"</p>
                 </div>
 
-                <!-- Review 2 -->
                 <div class="glass-card p-8 rounded-lg hover:border-fmg-red/50 transition-colors">
                     <div class="flex items-center mb-4">
                         <div class="w-10 h-10 rounded-full bg-gradient-to-br from-gray-700 to-gray-900 flex items-center justify-center font-bold text-fmg-red">MS</div>
@@ -394,7 +368,6 @@
                     <p class="text-gray-300 text-sm italic">"Entrei em contato e fui muito bem atendido e tive muitas dúvidas sanadas. Agradeço pela transparência e sinceridade."</p>
                 </div>
 
-                <!-- Review 3 -->
                 <div class="glass-card p-8 rounded-lg hover:border-fmg-red/50 transition-colors">
                     <div class="flex items-center mb-4">
                         <div class="w-10 h-10 rounded-full bg-gradient-to-br from-gray-700 to-gray-900 flex items-center justify-center font-bold text-fmg-red">VR</div>
@@ -413,7 +386,6 @@
                     <p class="text-gray-300 text-sm italic">"Sempre atenciosos, serviço perfeito e rápido. Realmente possuem o conhecimento técnico avançado dos franceses."</p>
                 </div>
 
-                <!-- Review 4 -->
                 <div class="glass-card p-8 rounded-lg hover:border-fmg-red/50 transition-colors">
                     <div class="flex items-center mb-4">
                         <div class="w-10 h-10 rounded-full bg-gradient-to-br from-gray-700 to-gray-900 flex items-center justify-center font-bold text-fmg-red">JM</div>
@@ -429,10 +401,9 @@
                         <i data-lucide="star" class="w-4 h-4 fill-current"></i>
                         <i data-lucide="star" class="w-4 h-4 fill-current"></i>
                     </div>
-                    <p class="text-gray-300 text-sm italic">"De longe é a melhor especializada em francês da região do ABC/Capital. O Jhonathan foi comigo fazer uma avaliação do carro antes mesmo de fechar o negócio... firmeza demais."</p>
+                    <p class="text-gray-300 text-sm italic">"De longe é a melhor especializada em francês da região do ABC/Capital. O Jhonathan foi comigo fazer uma avaliação do carro antes mesmo de fechar o negócio."</p>
                 </div>
 
-                <!-- Review 5 -->
                 <div class="glass-card p-8 rounded-lg hover:border-fmg-red/50 transition-colors">
                     <div class="flex items-center mb-4">
                         <div class="w-10 h-10 rounded-full bg-gradient-to-br from-gray-700 to-gray-900 flex items-center justify-center font-bold text-fmg-red">AJ</div>
@@ -448,10 +419,9 @@
                         <i data-lucide="star" class="w-4 h-4 fill-current"></i>
                         <i data-lucide="star" class="w-4 h-4 fill-current"></i>
                     </div>
-                    <p class="text-gray-300 text-sm italic">"Excelente atendimento, dispensou tempo para entender os problemas... Teve atenção aos detalhes (entregou o carro limpo inclusive)."</p>
+                    <p class="text-gray-300 text-sm italic">"Excelente atendimento, dispensou tempo para entender os problemas... Teve atenção aos detalhes."</p>
                 </div>
 
-                <!-- Review 6 -->
                 <div class="glass-card p-8 rounded-lg hover:border-fmg-red/50 transition-colors">
                     <div class="flex items-center mb-4">
                         <div class="w-10 h-10 rounded-full bg-gradient-to-br from-gray-700 to-gray-900 flex items-center justify-center font-bold text-fmg-red">BV</div>
@@ -467,7 +437,7 @@
                         <i data-lucide="star" class="w-4 h-4 fill-current"></i>
                         <i data-lucide="star" class="w-4 h-4 fill-current"></i>
                     </div>
-                    <p class="text-gray-300 text-sm italic">"Indico de olhos fechados para quem tem carro francês. Eles explicam tudo que precisa ser feito, com fotos e vídeos... fazem o que tem que ser feito, sem inventar coisa."</p>
+                    <p class="text-gray-300 text-sm italic">"Indico de olhos fechados para quem tem carro francês. Eles explicam tudo que precisa ser feito, com fotos e vídeos."</p>
                 </div>
             </div>
         </div>
@@ -501,41 +471,11 @@
 
                 <details class="faq-details bg-fmg-dark rounded-lg border border-white/5 group">
                     <summary class="list-none flex justify-between items-center p-5 cursor-pointer font-bold hover:text-fmg-red transition-colors">
-                        Posso esperar enquanto faz?
-                        <span class="transition-transform group-open:rotate-180"><i data-lucide="chevron-down"></i></span>
-                    </summary>
-                    <div class="p-5 pt-0 text-gray-400 border-t border-white/5 mt-2">
-                        A grande maioria dos serviços não são feitos no mesmo dia, mas podem ocorrer situações que sim. Chame no agendamento para verificar seu caso.
-                    </div>
-                </details>
-
-                <details class="faq-details bg-fmg-dark rounded-lg border border-white/5 group">
-                    <summary class="list-none flex justify-between items-center p-5 cursor-pointer font-bold hover:text-fmg-red transition-colors">
-                        Vocês podem me mostrar a peça velha?
-                        <span class="transition-transform group-open:rotate-180"><i data-lucide="chevron-down"></i></span>
-                    </summary>
-                    <div class="p-5 pt-0 text-gray-400 border-t border-white/5 mt-2">
-                        Sim, todos os clientes têm o direito de levar as peças velhas embora. Nossa equipe sempre separa e só descarta após autorização do cliente.
-                    </div>
-                </details>
-
-                <details class="faq-details bg-fmg-dark rounded-lg border border-white/5 group">
-                    <summary class="list-none flex justify-between items-center p-5 cursor-pointer font-bold hover:text-fmg-red transition-colors">
                         Tem garantia no serviço?
                         <span class="transition-transform group-open:rotate-180"><i data-lucide="chevron-down"></i></span>
                     </summary>
                     <div class="p-5 pt-0 text-gray-400 border-t border-white/5 mt-2">
                         Sim! Oferecemos no mínimo 6 meses de garantia nos serviços executados.
-                    </div>
-                </details>
-
-                <details class="faq-details bg-fmg-dark rounded-lg border border-white/5 group">
-                    <summary class="list-none flex justify-between items-center p-5 cursor-pointer font-bold hover:text-fmg-red transition-colors">
-                        Vocês fazem diagnóstico sem compromisso?
-                        <span class="transition-transform group-open:rotate-180"><i data-lucide="chevron-down"></i></span>
-                    </summary>
-                    <div class="p-5 pt-0 text-gray-400 border-t border-white/5 mt-2">
-                        Não. Nossos diagnósticos são cobrados caso o serviço não seja executado. Se o orçamento for aprovado, o valor do diagnóstico é abatido.
                     </div>
                 </details>
             </div>
@@ -575,14 +515,6 @@
                         <a href="https://wa.me/5511956537606?text=Ol%C3%A1%20vim%20do%20site%20e%20quero%20cotar%20pe%C3%A7as!" target="_blank" class="text-fmg-red text-sm font-bold mt-1 inline-block hover:underline">Cotar Peças &rarr;</a>
                     </div>
                 </div>
-
-                <div class="flex items-start gap-4">
-                    <div class="p-3 bg-fmg-red/10 rounded-full text-fmg-red"><i data-lucide="credit-card"></i></div>
-                    <div>
-                        <h4 class="font-bold text-lg">Pagamento Facilitado</h4>
-                        <p class="text-gray-400">PIX, Cartão de Crédito e Parcelamento. Consulte condições no agendamento.</p>
-                    </div>
-                </div>
             </div>
         </div>
     </section>
@@ -607,13 +539,10 @@
     <!-- Controle de Áudio - Turbo Compressor -->
     <button id="audio-control" class="fixed bottom-6 left-6 z-50 bg-fmg-gray/90 backdrop-blur text-white p-3 rounded-full border border-white/10 hover:border-fmg-red hover:text-fmg-red transition-all shadow-lg group flex items-center justify-center" title="Acelerar">
         <div class="relative w-8 h-8">
-            <!-- Carcaça do Turbo (Estática) -->
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="w-full h-full absolute inset-0 text-gray-400 group-hover:text-fmg-red transition-colors">
                 <path d="M12 22a10 10 0 1 0 0-20 10 10 0 0 0 0 20z"></path>
                 <path d="M12 12m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0" class="opacity-50"></path>
             </svg>
-            
-            <!-- Hélice do Compressor (Giratória) -->
             <svg id="turbo-fan" viewBox="0 0 24 24" fill="currentColor" class="w-full h-full absolute inset-0 text-white p-[5px] origin-center">
                 <g>
                     <path d="M12 12 L12 4 C14 4 15 5 16 6 L12 12"></path>
@@ -630,12 +559,9 @@
     </button>
 
     <script>
-        // Initialize Icons
         lucide.createIcons();
-
-        // Engine Rev Sound Synthesis (Web Audio API)
         const audioControl = document.getElementById('audio-control');
-        const turboFan = document.getElementById('turbo-fan'); // Elemento da hélice
+        const turboFan = document.getElementById('turbo-fan');
         let audioCtx;
         let isPlaying = false;
 
@@ -649,87 +575,57 @@
         function playRevSound() {
             if (isPlaying) return;
             initAudio();
-            
-            if (audioCtx.state === 'suspended') {
-                audioCtx.resume();
-            }
-
+            if (audioCtx.state === 'suspended') audioCtx.resume();
             isPlaying = true;
-            
-            // Ativa a animação de rotação do turbo
             turboFan.classList.add('spin-turbo-active');
-            
-            // Visual feedback no botão
             audioControl.classList.add('border-fmg-red', 'scale-110');
-
             const now = audioCtx.currentTime;
-            const duration = 2.0; // Duração total do efeito
-
-            // Reset visual após o som
+            const duration = 2.0;
             setTimeout(() => {
                 turboFan.classList.remove('spin-turbo-active');
                 audioControl.classList.remove('border-fmg-red', 'scale-110');
                 isPlaying = false;
             }, duration * 1000);
-
-            // --- SÍNTESE DO SOM (Mesma lógica anterior) ---
-            
-            // Master Gain (Volume Envelope)
             const masterGain = audioCtx.createGain();
             masterGain.connect(audioCtx.destination);
-            
-            // Envelope de Volume
             masterGain.gain.setValueAtTime(0, now);
             masterGain.gain.linearRampToValueAtTime(0.3, now + 0.1); 
             masterGain.gain.exponentialRampToValueAtTime(0.01, now + duration);
-
-            // Filtro Lowpass (Corpo do motor)
             const filter = audioCtx.createBiquadFilter();
             filter.type = 'lowpass';
             filter.frequency.setValueAtTime(200, now);
-            filter.frequency.linearRampToValueAtTime(800, now + 0.3); // Turbo abre mais agudo
+            filter.frequency.linearRampToValueAtTime(800, now + 0.3);
             filter.frequency.linearRampToValueAtTime(200, now + 1.5); 
             filter.connect(masterGain);
-
-            // Osciladores
             const freqs = [50, 52, 100]; 
             const types = ['sawtooth', 'square', 'sawtooth'];
-
             freqs.forEach((f, i) => {
                 const osc = audioCtx.createOscillator();
                 osc.type = types[i];
                 osc.frequency.setValueAtTime(f, now);
-                osc.frequency.exponentialRampToValueAtTime(f * 4.5, now + 0.3); // Acelerada rápida
+                osc.frequency.exponentialRampToValueAtTime(f * 4.5, now + 0.3);
                 osc.frequency.exponentialRampToValueAtTime(f, now + 1.8);
                 osc.connect(filter);
                 osc.start(now);
                 osc.stop(now + duration);
             });
-
-            // Adicionar silvo do Turbo (High pitch whistle)
             const turboOsc = audioCtx.createOscillator();
             turboOsc.type = 'sine';
             turboOsc.frequency.setValueAtTime(1000, now);
-            turboOsc.frequency.exponentialRampToValueAtTime(4000, now + 0.3); // Spool up
-            turboOsc.frequency.exponentialRampToValueAtTime(500, now + 2.0); // Spool down
-            
+            turboOsc.frequency.exponentialRampToValueAtTime(4000, now + 0.3);
+            turboOsc.frequency.exponentialRampToValueAtTime(500, now + 2.0);
             const turboGain = audioCtx.createGain();
             turboGain.gain.setValueAtTime(0, now);
             turboGain.gain.linearRampToValueAtTime(0.05, now + 0.3);
             turboGain.gain.linearRampToValueAtTime(0, now + 1.5);
-            
             turboOsc.connect(turboGain);
-            turboGain.connect(audioCtx.destination); // Conecta direto para manter agudo
+            turboGain.connect(audioCtx.destination);
             turboOsc.start(now);
             turboOsc.stop(now + duration);
-
-            // Noise (Escape)
             const bufferSize = audioCtx.sampleRate * duration;
             const buffer = audioCtx.createBuffer(1, bufferSize, audioCtx.sampleRate);
             const data = buffer.getChannelData(0);
-            for (let i = 0; i < bufferSize; i++) {
-                data[i] = Math.random() * 2 - 1;
-            }
+            for (let i = 0; i < bufferSize; i++) data[i] = Math.random() * 2 - 1;
             const noise = audioCtx.createBufferSource();
             noise.buffer = buffer;
             const noiseGain = audioCtx.createGain();
@@ -739,13 +635,10 @@
             noiseGain.connect(filter);
             noise.start(now);
         }
-
-        // Botão manual
         audioControl.addEventListener('click', (e) => {
             e.stopPropagation();
             playRevSound();
         });
-
     </script>
 </body>
 </html>
