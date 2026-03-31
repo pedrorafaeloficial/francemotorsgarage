@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Especialista Francês | France Motors Garage</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'display': ['Orbitron', 'sans-serif'],
+                        'body': ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        'france-blue': '#0055A4',
+                        'france-red': '#EF4135',
+                        'neon-blue': '#00f3ff',
+                        'dark-bg': '#0a0a0f',
+                    },
+                    animation: {
+                        'glow-pulse': 'glow 3s ease-in-out infinite alternate',
+                        'float': 'float 6s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        glow: {
+                            '0%': { boxShadow: '0 0 10px #0055A4, 0 0 20px #0055A4' },
+                            '100%': { boxShadow: '0 0 20px #EF4135, 0 0 40px #EF4135' }
+                        },
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-20px)' }
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #0a0a0f;
+            color: #ffffff;
+            background-image: 
+                linear-gradient(rgba(10, 10, 15, 0.9), rgba(10, 10, 15, 0.9)),
+                linear-gradient(90deg, rgba(0, 85, 164, 0.05) 1px, transparent 1px),
+                linear-gradient(rgba(239, 65, 53, 0.05) 1px, transparent 1px);
+            background-size: 100% 100%, 40px 40px, 40px 40px;
+        }
+        
+        .neon-text-blue { text-shadow: 0 0 10px #0055A4, 0 0 20px #0055A4; }
+        .neon-text-red { text-shadow: 0 0 10px #EF4135, 0 0 20px #EF4135; }
+        
+        .glass-panel {
+            background: rgba(20, 20, 30, 0.6);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .border-gradient {
+            border: 2px solid transparent;
+            background-clip: padding-box, border-box;
+            background-origin: padding-box, border-box;
+            background-image: linear-gradient(#14141e, #14141e), linear-gradient(to right, #0055A4, #EF4135);
+        }
+
+        /* Ocultar scrollbar mas manter funcionalidade */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #0a0a0f; }
+        ::-webkit-scrollbar-thumb { background: #0055A4; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #EF4135; }
+    </style>
+</head>
+<body class="font-body antialiased overflow-x-hidden">
+
+    <!-- HERO SECTION -->
+    <header class="relative min-h-screen flex items-center justify-center pt-20 pb-12 px-4 overflow-hidden">
+        <!-- Elementos decorativos de fundo -->
+        <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-france-blue rounded-full mix-blend-screen filter blur-[128px] opacity-30 animate-pulse"></div>
+        <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-france-red rounded-full mix-blend-screen filter blur-[128px] opacity-30 animate-pulse delay-1000"></div>
+
+        <div class="relative z-10 max-w-5xl mx-auto text-center space-y-8">
+            <div class="inline-block px-4 py-1 rounded-full border border-france-blue bg-france-blue/10 text-neon-blue font-display text-sm md:text-base tracking-widest mb-4 uppercase">
+                France Motors Garage Apresenta
+            </div>
+            
+            <h1 class="font-display text-5xl md:text-7xl font-black uppercase tracking-tighter leading-tight">
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-france-blue to-neon-blue">Especialista</span><br>
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-400 text-6xl md:text-8xl">FRANCÊS</span><br>
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-france-red to-red-400 text-3xl md:text-5xl">Domine o Motor THP</span>
+            </h1>
+            
+            <p class="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto font-light leading-relaxed">
+                O manual definitivo, agora em formato presencial. Eletrônica básica, diagnóstico avançado e reparação total focada em técnicos reparadores e entusiastas de alta performance.
+            </p>
+
+            <div class="flex flex-col sm:flex-row gap-4 justify-center pt-8">
+                <a href="#ofertas" class="group relative px-8 py-4 bg-transparent overflow-hidden rounded-lg font-display font-bold tracking-wider uppercase text-white border border-france-red hover:border-transparent transition-all duration-300">
+                    <div class="absolute inset-0 w-full h-full bg-gradient-to-r from-france-red to-red-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10"></div>
+                    <span class="relative z-10 flex items-center justify-center gap-2">Garantir Minha Vaga <i data-lucide="chevron-right"></i></span>
+                </a>
+                <a href="#detalhes" class="px-8 py-4 rounded-lg font-display font-bold tracking-wider uppercase text-gray-300 border border-gray-700 hover:bg-gray-800 transition-all duration-300">
+                    Ver Cronograma
+                </a>
+            </div>
+
+            <!-- Countdown -->
+            <div class="pt-12">
+                <p class="text-sm uppercase tracking-widest text-gray-400 mb-4 font-display">O portal fecha em:</p>
+                <div id="countdown" class="flex gap-4 justify-center font-display text-2xl md:text-4xl font-bold">
+                    <div class="flex flex-col"><span id="days" class="text-france-blue neon-text-blue">00</span><span class="text-xs text-gray-500 mt-1">Dias</span></div><span class="text-gray-600">:</span>
+                    <div class="flex flex-col"><span id="hours" class="text-white">00</span><span class="text-xs text-gray-500 mt-1">Horas</span></div><span class="text-gray-600">:</span>
+                    <div class="flex flex-col"><span id="minutes" class="text-white">00</span><span class="text-xs text-gray-500 mt-1">Min</span></div><span class="text-gray-600">:</span>
+                    <div class="flex flex-col"><span id="seconds" class="text-france-red neon-text-red">00</span><span class="text-xs text-gray-500 mt-1">Seg</span></div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- EVENT DETAILS -->
+    <section id="detalhes" class="py-20 relative border-t border-white/5">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="font-display text-3xl md:text-5xl font-bold mb-4 uppercase">Operação <span class="text-france-blue">Imersão Total</span></h2>
+                <p class="text-gray-400 max-w-2xl mx-auto">Dois dias intensos de imersão técnica, networking e hands-on com os maiores especialistas em motores THP.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Data 1 -->
+                <div class="border-gradient rounded-xl p-8 transform hover:-translate-y-2 transition-transform duration-300">
+                    <div class="w-14 h-14 rounded-full bg-france-blue/20 flex items-center justify-center mb-6 border border-france-blue">
+                        <i data-lucide="calendar" class="text-neon-blue"></i>
+                    </div>
+                    <h3 class="text-xl font-display font-bold mb-2">DIA 1 - Fundamentos</h3>
+                    <p class="text-france-blue font-bold mb-4">Sábado, 20 de Junho de 2026</p>
+                    <p class="text-gray-400 mb-2"><i data-lucide="clock" class="inline w-4 h-4 mr-2"></i>08:00 às 18:00</p>
+                    <p class="text-sm text-gray-500 border-t border-white/10 pt-4 mt-4">Eletrônica Básica, Sensores, Atuadores e Diagnóstico Inicial.</p>
+                </div>
+                
+                <!-- Data 2 -->
+                <div class="border-gradient rounded-xl p-8 transform hover:-translate-y-2 transition-transform duration-300">
+                    <div class="w-14 h-14 rounded-full bg-france-red/20 flex items-center justify-center mb-6 border border-france-red">
+                        <i data-lucide="settings" class="text-france-red"></i>
+                    </div>
+                    <h3 class="text-xl font-display font-bold mb-2">DIA 2 - Avançado</h3>
+                    <p class="text-france-red font-bold mb-4">Domingo, 21 de Junho de 2026</p>
+                    <p class="text-gray-400 mb-2"><i data-lucide="clock" class="inline w-4 h-4 mr-2"></i>08:00 às 18:00</p>
+                    <p class="text-sm text-gray-500 border-t border-white/10 pt-4 mt-4">Desmontagem, pontos críticos do Motor THP e resoluções de problemas complexos.</p>
+                </div>
+
+                <!-- Estrutura -->
+                <div class="glass-panel rounded-xl p-8">
+                    <div class="w-14 h-14 rounded-full bg-gray-800 flex items-center justify-center mb-6 border border-gray-600">
+                        <i data-lucide="coffee" class="text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-display font-bold mb-2">Estrutura</h3>
+                    <ul class="space-y-3 text-gray-400 text-sm">
+                        <li class="flex items-start gap-2"><i data-lucide="map-pin" class="w-4 h-4 text-france-blue mt-0.5"></i> Rua Leonardo Fioravanti 209, Santo André - SP</li>
+                        <li class="flex items-start gap-2"><i data-lucide="check-circle" class="w-4 h-4 text-green-400 mt-0.5"></i> Café da manhã incluso (2 dias)</li>
+                        <li class="flex items-start gap-2"><i data-lucide="check-circle" class="w-4 h-4 text-green-400 mt-0.5"></i> Café da tarde incluso (2 dias)</li>
+                        <li class="flex items-start gap-2"><i data-lucide="check-circle" class="w-4 h-4 text-green-400 mt-0.5"></i> Material de apoio e apostilas impressas</li>
+                        <li class="flex items-start gap-2"><i data-lucide="alert-circle" class="w-4 h-4 text-yellow-500 mt-0.5"></i> Almoço por conta do aluno (Local pré-definido para a turma)</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- BONUSES -->
+    <section id="bonus" class="py-20 relative bg-black/50">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="text-center mb-16">
+                <span class="text-france-red font-display tracking-widest uppercase text-sm font-bold">Aceleração de Resultados</span>
+                <h2 class="font-display text-3xl md:text-5xl font-bold mt-2 uppercase">Bônus <span class="text-transparent bg-clip-text bg-gradient-to-r from-france-blue to-france-red">Exclusivos</span></h2>
+                <p class="text-gray-400 mt-4 max-w-2xl mx-auto">Para os participantes desta turma presencial, liberamos acesso a ferramentas que vão transformar o faturamento da sua oficina.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Bonus 1 -->
+                <div class="bg-gradient-to-b from-gray-900 to-[#0a0a0f] border border-france-blue/30 rounded-2xl p-8 relative overflow-hidden group">
+                    <div class="absolute top-0 right-0 bg-france-blue text-white text-xs font-bold px-3 py-1 rounded-bl-lg font-display">BÔNUS 01</div>
+                    <i data-lucide="trending-up" class="w-12 h-12 text-neon-blue mb-6 group-hover:scale-110 transition-transform"></i>
+                    <h3 class="text-xl font-bold mb-3">Oficina no Azul</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">Curso online completo ensinando a maneira exata e lucrativa de precificar Peças, Mão de Obra e Serviços. Pare de pagar para trabalhar.</p>
+                </div>
+
+                <!-- Bonus 2 -->
+                <div class="bg-gradient-to-b from-gray-900 to-[#0a0a0f] border border-white/10 rounded-2xl p-8 relative overflow-hidden group">
+                    <div class="absolute top-0 right-0 bg-white text-black text-xs font-bold px-3 py-1 rounded-bl-lg font-display">BÔNUS 02</div>
+                    <i data-lucide="users" class="w-12 h-12 text-white mb-6 group-hover:scale-110 transition-transform"></i>
+                    <h3 class="text-xl font-bold mb-3">Networking de Elite</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">Acesso vitalício ao Grupo Exclusivo da Turma no WhatsApp. Troca de informações, arquivos de injeção e suporte da comunidade 24/7.</p>
+                </div>
+
+                <!-- Bonus 3 -->
+                <div class="bg-gradient-to-b from-gray-900 to-[#0a0a0f] border border-france-red/30 rounded-2xl p-8 relative overflow-hidden group">
+                    <div class="absolute top-0 right-0 bg-france-red text-white text-xs font-bold px-3 py-1 rounded-bl-lg font-display">BÔNUS 03</div>
+                    <i data-lucide="shield-check" class="w-12 h-12 text-france-red mb-6 group-hover:scale-110 transition-transform"></i>
+                    <h3 class="text-xl font-bold mb-3">Suporte Personalizado</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">3 Meses de acesso direto aos especialistas da France Motors para tirar dúvidas complexas de pátio sobre os motores abordados.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SOCIAL PROOF -->
+    <section class="py-20 relative border-t border-white/5">
+        <div class="max-w-6xl mx-auto px-4">
+            <h2 class="font-display text-3xl text-center font-bold mb-16 uppercase">O que dizem os <span class="text-france-blue">Especialistas</span></h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Depoimento 1 -->
+                <div class="glass-panel p-6 rounded-xl border-l-4 border-l-france-blue">
+                    <div class="flex items-center gap-4 mb-4">
+                        <div class="w-12 h-12 bg-gray-700 rounded-full flex items-center justify-center font-bold">JD</div>
+                        <div>
+                            <h4 class="font-bold">João Dias</h4>
+                            <p class="text-xs text-gray-400">Proprietário - JD Auto Center</p>
+                        </div>
+                    </div>
+                    <p class="text-sm text-gray-300 italic">"O THP sempre foi uma dor de cabeça na oficina. Depois do treinamento da France Motors, o que era prejuízo virou a especialidade mais lucrativa da nossa garagem."</p>
+                    <div class="flex text-yellow-500 mt-4"><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i></div>
+                </div>
+
+                <!-- Depoimento 2 -->
+                <div class="glass-panel p-6 rounded-xl border-l-4 border-l-white">
+                    <div class="flex items-center gap-4 mb-4">
+                        <div class="w-12 h-12 bg-gray-700 rounded-full flex items-center justify-center font-bold">MA</div>
+                        <div>
+                            <h4 class="font-bold">Marcos Almeida</h4>
+                            <p class="text-xs text-gray-400">Mecânico Chefe</p>
+                        </div>
+                    </div>
+                    <p class="text-sm text-gray-300 italic">"O nível técnico é absurdo. A parte de eletrônica básica do treinamento clareou coisas que em 10 anos de profissão ninguém tinha me ensinado direito."</p>
+                    <div class="flex text-yellow-500 mt-4"><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i></div>
+                </div>
+
+                <!-- Depoimento 3 -->
+                <div class="glass-panel p-6 rounded-xl border-l-4 border-l-france-red">
+                    <div class="flex items-center gap-4 mb-4">
+                        <div class="w-12 h-12 bg-gray-700 rounded-full flex items-center justify-center font-bold">CS</div>
+                        <div>
+                            <h4 class="font-bold">Carlos Silva</h4>
+                            <p class="text-xs text-gray-400">Entusiasta / Preparador</p>
+                        </div>
+                    </div>
+                    <p class="text-sm text-gray-300 italic">"O Bônus 'Oficina no Azul' sozinho já paga o curso. Aprender a cobrar o preço justo em cima de serviço premium mudou meu negócio."</p>
+                    <div class="flex text-yellow-500 mt-4"><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- QUEBRA DE OBJEÇÕES -->
+    <section class="py-16 bg-gradient-to-b from-[#0a0a0f] to-[#12121a]">
+        <div class="max-w-4xl mx-auto px-4 text-center">
+            <h2 class="font-display text-3xl font-bold mb-10 uppercase">Por que você <span class="text-france-red">NÃO PODE</span> ficar de fora?</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-left">
+                <div class="flex gap-4 items-start">
+                    <i data-lucide="x-circle" class="w-6 h-6 text-france-red flex-shrink-0 mt-1"></i>
+                    <div>
+                        <h4 class="font-bold text-lg">"Não tenho experiência com franceses."</h4>
+                        <p class="text-gray-400 text-sm mt-1">O treinamento vai do diagnóstico base à desmontagem completa. Você sairá preparado independentemente do seu nível atual.</p>
+                    </div>
+                </div>
+                <div class="flex gap-4 items-start">
+                    <i data-lucide="x-circle" class="w-6 h-6 text-france-red flex-shrink-0 mt-1"></i>
+                    <div>
+                        <h4 class="font-bold text-lg">"É muito caro."</h4>
+                        <p class="text-gray-400 text-sm mt-1">Um único diagnóstico correto e um serviço bem cobrado de THP (usando o método do Bônus 1) pagam este treinamento.</p>
+                    </div>
+                </div>
+                <div class="flex gap-4 items-start">
+                    <i data-lucide="x-circle" class="w-6 h-6 text-france-red flex-shrink-0 mt-1"></i>
+                    <div>
+                        <h4 class="font-bold text-lg">"Vou esquecer o que aprendi."</h4>
+                        <p class="text-gray-400 text-sm mt-1">Você terá 3 meses de suporte direto + Apostila física completa + Grupo vitalício para consultar sempre que precisar.</p>
+                    </div>
+                </div>
+                <div class="flex gap-4 items-start">
+                    <i data-lucide="check-circle" class="w-6 h-6 text-green-500 flex-shrink-0 mt-1"></i>
+                    <div>
+                        <h4 class="font-bold text-lg">Garantia de Conteúdo</h4>
+                        <p class="text-gray-400 text-sm mt-1">Acesso integral ao material. Se você executa reparação, o retorno sobre esse investimento é matemático e certo.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- OFERTAS (PRICING) -->
+    <section id="ofertas" class="py-24 relative overflow-hidden">
+        <!-- Background elements -->
+        <div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTTAgMGg0MHY0MEgweiIgZmlsbD0ibm9uZSIvPjxwYXRoIGQ9Ik0wIDEwaDQwTTAgMjBoNDBNMCAzMGg0ME0xMCAwdjQwTTIwIDB2NDBNMzAgMHY0MCIgc3Ryb2tlPSJyZ2JhKDI1NSwyNTUsMjU1LDAuMDMpIiBzdHJva2Utd2lkdGg9IjEiLz48L3N2Zz4=')] z-0"></div>
+        
+        <div class="max-w-5xl mx-auto px-4 relative z-10">
+            <div class="text-center mb-16">
+                <h2 class="font-display text-4xl md:text-5xl font-black mb-4 uppercase text-white">Escolha seu <span class="text-transparent bg-clip-text bg-gradient-to-r from-france-blue to-france-red">Acesso</span></h2>
+                <p class="text-gray-400">Vagas estritamente limitadas para garantir a qualidade do evento presencial.</p>
+            </div>
+
+            <div class="flex flex-col md:flex-row gap-8 justify-center items-stretch">
+                
+                <!-- Oferta 1 -->
+                <div class="flex-1 glass-panel rounded-2xl p-8 border border-gray-700 hover:border-france-blue transition-colors flex flex-col">
+                    <div class="mb-8 border-b border-gray-800 pb-8">
+                        <h3 class="font-display text-2xl font-bold uppercase text-gray-300">Acesso Individual</h3>
+                        <p class="text-sm text-gray-500 mt-2">Para 1 Participante</p>
+                        <div class="mt-6">
+                            <span class="text-sm text-gray-400 block">12x de</span>
+                            <span class="text-5xl font-black font-display text-white">R$ 186<span class="text-2xl text-france-blue">,16</span></span>
+                            <span class="text-sm text-gray-400 block mt-2">ou R$ 1.800,00 à vista</span>
+                        </div>
+                    </div>
+                    
+                    <ul class="space-y-4 text-sm text-gray-300 mb-8 flex-1">
+                        <li class="flex items-center gap-3"><i data-lucide="check" class="text-france-blue w-5 h-5"></i> 2 Dias de Treinamento</li>
+                        <li class="flex items-center gap-3"><i data-lucide="check" class="text-france-blue w-5 h-5"></i> Material de Apoio Completo</li>
+                        <li class="flex items-center gap-3"><i data-lucide="check" class="text-france-blue w-5 h-5"></i> Bônus 1: Oficina no Azul</li>
+                        <li class="flex items-center gap-3"><i data-lucide="check" class="text-france-blue w-5 h-5"></i> Bônus 2: Grupo de Networking</li>
+                        <li class="flex items-center gap-3"><i data-lucide="check" class="text-france-blue w-5 h-5"></i> Bônus 3: 3 Meses de Suporte</li>
+                        <li class="flex items-center gap-3"><i data-lucide="check" class="text-france-blue w-5 h-5"></i> Coffee Break (Manhã/Tarde)</li>
+                    </ul>
+
+                    <a href="https://pay.kiwify.com.br/GXtcPBC" target="_blank" class="block w-full text-center py-4 rounded-lg font-bold font-display uppercase tracking-wider bg-france-blue hover:bg-blue-700 text-white transition-colors shadow-[0_0_15px_rgba(0,85,164,0.5)]">
+                        Garantir 1 Vaga
+                    </a>
+                </div>
+
+                <!-- Oferta 2 (Destaque) -->
+                <div class="flex-1 bg-gradient-to-b from-gray-900 to-[#0a0a0f] rounded-2xl p-8 border-2 border-france-red transform md:-translate-y-4 shadow-[0_0_30px_rgba(239,65,53,0.15)] flex flex-col relative">
+                    <div class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-france-red text-white font-bold font-display px-4 py-1 rounded-full text-sm uppercase tracking-wider">
+                        Melhor Custo x Benefício
+                    </div>
+
+                    <div class="mb-8 border-b border-gray-800 pb-8 mt-4">
+                        <h3 class="font-display text-2xl font-bold uppercase text-white">Acesso Duplo (Sócio)</h3>
+                        <p class="text-sm text-gray-400 mt-2">Para 2 Participantes (R$ 1.400 por pessoa)</p>
+                        <div class="mt-6">
+                            <span class="text-sm text-gray-400 block">12x de</span>
+                            <span class="text-5xl font-black font-display text-white">R$ 289<span class="text-2xl text-france-red">,59</span></span>
+                            <span class="text-sm text-gray-400 block mt-2">ou R$ 2.800,00 à vista</span>
+                        </div>
+                    </div>
+                    
+                    <ul class="space-y-4 text-sm text-gray-300 mb-8 flex-1">
+                        <li class="flex items-center gap-3"><i data-lucide="check" class="text-france-red w-5 h-5"></i> <strong class="text-white">Duas credenciais</strong> de acesso</li>
+                        <li class="flex items-center gap-3"><i data-lucide="check" class="text-france-red w-5 h-5"></i> 2x Materiais de Apoio Físicos</li>
+                        <li class="flex items-center gap-3"><i data-lucide="check" class="text-france-red w-5 h-5"></i> Acesso aos 3 Bônus para ambos</li>
+                        <li class="flex items-center gap-3"><i data-lucide="check" class="text-france-red w-5 h-5"></i> Grupo de Networking para ambos</li>
+                        <li class="flex items-center gap-3"><i data-lucide="check" class="text-france-red w-5 h-5"></i> 3 Meses de Suporte para a Oficina</li>
+                        <li class="flex items-center gap-3"><i data-lucide="check" class="text-france-red w-5 h-5"></i> Coffee Break (Manhã/Tarde)</li>
+                    </ul>
+
+                    <a href="https://pay.kiwify.com.br/xyTqYZX" target="_blank" class="block w-full text-center py-4 rounded-lg font-bold font-display uppercase tracking-wider bg-france-red hover:bg-red-700 text-white transition-colors shadow-[0_0_20px_rgba(239,65,53,0.6)] animate-pulse">
+                        Garantir 2 Vagas
+                    </a>
+                </div>
+
+            </div>
+            
+            <div class="text-center mt-8 flex items-center justify-center gap-2 text-gray-500 text-sm">
+                <i data-lucide="lock" class="w-4 h-4"></i> Pagamento 100% seguro processado via Kiwify.
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="py-20 bg-black/80">
+        <div class="max-w-3xl mx-auto px-4">
+            <h2 class="font-display text-3xl font-bold mb-10 text-center uppercase">Perguntas <span class="text-gray-400">Frequentes</span></h2>
+            
+            <div class="space-y-4" id="faq-container">
+                <!-- As perguntas são controladas via JS -->
+                <div class="faq-item border border-white/10 rounded-lg overflow-hidden bg-[#0a0a0f]">
+                    <button class="w-full px-6 py-4 text-left font-bold flex justify-between items-center focus:outline-none hover:bg-white/5 transition-colors">
+                        Onde será realizado o treinamento?
+                        <i data-lucide="chevron-down" class="transition-transform duration-300"></i>
+                    </button>
+                    <div class="px-6 pb-4 text-gray-400 text-sm hidden">
+                        O evento será realizado presencialmente na <strong>Rua Leonardo Fioravanti, 209 - Jardim Las Vegas, Santo André - SP</strong>.
+                    </div>
+                </div>
+
+                <div class="faq-item border border-white/10 rounded-lg overflow-hidden bg-[#0a0a0f]">
+                    <button class="w-full px-6 py-4 text-left font-bold flex justify-between items-center focus:outline-none hover:bg-white/5 transition-colors">
+                        O almoço está incluso?
+                        <i data-lucide="chevron-down" class="transition-transform duration-300"></i>
+                    </button>
+                    <div class="px-6 pb-4 text-gray-400 text-sm hidden">
+                        Não. O almoço é por conta do aluno. Teremos um local pré-definido próximo ao evento onde a turma e os professores irão se reunir para facilitar o networking, mas o consumo é individual. O Coffee Break (manhã e tarde) está incluso na inscrição.
+                    </div>
+                </div>
+
+                <div class="faq-item border border-white/10 rounded-lg overflow-hidden bg-[#0a0a0f]">
+                    <button class="w-full px-6 py-4 text-left font-bold flex justify-between items-center focus:outline-none hover:bg-white/5 transition-colors">
+                        Como recebo o acesso aos Bônus?
+                        <i data-lucide="chevron-down" class="transition-transform duration-300"></i>
+                    </button>
+                    <div class="px-6 pb-4 text-gray-400 text-sm hidden">
+                        Após a confirmação do pagamento na Kiwify, você receberá um e-mail com as instruções de acesso à plataforma onde o curso "Oficina no Azul" está hospedado e o link oficial do Grupo de Networking da Turma.
+                    </div>
+                </div>
+
+                <div class="faq-item border border-white/10 rounded-lg overflow-hidden bg-[#0a0a0f]">
+                    <button class="w-full px-6 py-4 text-left font-bold flex justify-between items-center focus:outline-none hover:bg-white/5 transition-colors">
+                        Posso levar um acompanhante que não seja mecânico?
+                        <i data-lucide="chevron-down" class="transition-transform duration-300"></i>
+                    </button>
+                    <div class="px-6 pb-4 text-gray-400 text-sm hidden">
+                        A entrada no evento é estritamente permitida apenas para quem adquiriu o ingresso (Individual ou Duplo). Caso queira levar um sócio ou funcionário, recomendamos a "Oferta 2 Participantes" que possui um desconto significativo.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="border-t border-white/10 py-10 bg-[#050508]">
+        <div class="max-w-6xl mx-auto px-4 text-center">
+            <h3 class="font-display font-black text-2xl tracking-widest text-white mb-2 uppercase">FRANCE <span class="text-france-blue">MOTORS</span> <span class="text-france-red">GARAGE</span></h3>
+            <p class="text-gray-500 text-sm mb-6">Treinamento Especialista Francês - Motor THP</p>
+            
+            <div class="flex justify-center gap-6 mb-8">
+                <a href="#" class="text-gray-400 hover:text-white transition-colors"><i data-lucide="instagram"></i></a>
+                <a href="#" class="text-gray-400 hover:text-white transition-colors"><i data-lucide="youtube"></i></a>
+                <a href="#" class="text-gray-400 hover:text-white transition-colors"><i data-lucide="facebook"></i></a>
+            </div>
+
+            <p class="text-xs text-gray-600">
+                &copy; 2026 France Motors Garage. Todos os direitos reservados.<br>
+                Este site não faz parte do website do Facebook ou do Facebook Inc. Além disso, este site NÃO é endossado pelo Facebook de nenhuma maneira. FACEBOOK é uma marca comercial independente da FACEBOOK, Inc.
+            </p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        // Inicializa ícones
+        lucide.createIcons();
+
+        // FAQ Toggle
+        document.querySelectorAll('.faq-item button').forEach(button => {
+            button.addEventListener('click', () => {
+                const content = button.nextElementSibling;
+                const icon = button.querySelector('i');
+                
+                // Toggle current
+                content.classList.toggle('hidden');
+                if(content.classList.contains('hidden')) {
+                    icon.style.transform = 'rotate(0deg)';
+                } else {
+                    icon.style.transform = 'rotate(180deg)';
+                }
+            });
+        });
+
+        // Countdown Timer para 20 de Junho de 2026 08:00:00
+        const countDownDate = new Date("Jun 20, 2026 08:00:00").getTime();
+
+        const x = setInterval(function() {
+            const now = new Date().getTime();
+            const distance = countDownDate - now;
+
+            if (distance < 0) {
+                clearInterval(x);
+                document.getElementById("countdown").innerHTML = "<div class='text-france-red font-display animate-pulse'>TREINAMENTO INICIADO</div>";
+                return;
+            }
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.getElementById("days").innerText = days.toString().padStart(2, '0');
+            document.getElementById("hours").innerText = hours.toString().padStart(2, '0');
+            document.getElementById("minutes").innerText = minutes.toString().padStart(2, '0');
+            document.getElementById("seconds").innerText = seconds.toString().padStart(2, '0');
+        }, 1000);
+    </script>
+</body>
+</html>
