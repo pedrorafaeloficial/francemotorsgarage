@@ -48,9 +48,39 @@
         .text-glow {
             text-shadow: 0 0 15px rgba(225, 29, 72, 0.4);
         }
+
+        /* Estilos para o Modal de Aprovação */
+        #approvalModal {
+            display: none;
+            position: fixed;
+            inset: 0;
+            z-index: 100;
+            background-color: rgba(0, 0, 0, 0.9);
+            align-items: center;
+            justify-content: center;
+            backdrop-filter: blur(8px);
+        }
     </style>
 </head>
 <body class="bg-white text-primary">
+
+    <!-- Modal de Aguarde Aprovação -->
+    <div id="approvalModal">
+        <div class="bg-darkGrey border border-zinc-800 p-8 md:p-12 rounded-2xl max-w-md w-full mx-4 text-center shadow-2xl relative overflow-hidden">
+            <div class="absolute top-0 left-0 w-full h-1 bg-tertiary"></div>
+            <div class="text-tertiary text-6xl mb-6">
+                <i class="fas fa-clock animate-pulse"></i>
+            </div>
+            <h2 class="font-heading text-3xl font-bold text-white uppercase italic mb-4">Solicitação Recebida!</h2>
+            <p class="text-zinc-400 text-lg mb-8 leading-relaxed">
+                Seus dados foram enviados para nossa central técnica. <br>
+                <span class="text-white font-bold">Aguarde a aprovação do seu acesso dentro de 24h.</span>
+            </p>
+            <button onclick="document.getElementById('approvalModal').style.display='none'" class="w-full bg-zinc-800 text-white font-heading py-3 rounded-md uppercase hover:bg-zinc-700 transition">
+                Fechar
+            </button>
+        </div>
+    </div>
 
     <nav class="fixed w-full z-50 bg-black/95 border-b border-zinc-800 backdrop-blur-sm">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -137,13 +167,19 @@
                         </div>
                         <div>
                             <label class="block text-zinc-400 text-xs uppercase font-bold tracking-widest mb-2">WhatsApp</label>
-                            <input type="tel" name="whatsapp" id="whatsapp" required placeholder="(00) 00000-0000" class="w-full bg-zinc-900 border border-zinc-800 rounded-md py-4 px-4 text-white focus:ring-2 focus:ring-tertiary outline-none transition">
+                            <input type="tel" name="whatsapp" id="whatsapp" required placeholder="(11) 90000-0000" class="w-full bg-zinc-900 border border-zinc-800 rounded-md py-4 px-4 text-white focus:ring-2 focus:ring-tertiary outline-none transition">
                         </div>
                     </div>
 
-                    <div>
-                        <label class="block text-zinc-400 text-xs uppercase font-bold tracking-widest mb-2">Seu Melhor E-mail</label>
-                        <input type="email" name="email" required placeholder="contato@oficina.com" class="w-full bg-zinc-900 border border-zinc-800 rounded-md py-4 px-4 text-white focus:ring-2 focus:ring-tertiary outline-none transition">
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-zinc-400 text-xs uppercase font-bold tracking-widest mb-2">Seu Melhor E-mail</label>
+                            <input type="email" name="email" required placeholder="contato@oficina.com" class="w-full bg-zinc-900 border border-zinc-800 rounded-md py-4 px-4 text-white focus:ring-2 focus:ring-tertiary outline-none transition">
+                        </div>
+                        <div>
+                            <label class="block text-zinc-400 text-xs uppercase font-bold tracking-widest mb-2">Instagram</label>
+                            <input type="text" name="instagram" placeholder="@seu.perfil" class="w-full bg-zinc-900 border border-zinc-800 rounded-md py-4 px-4 text-white focus:ring-2 focus:ring-tertiary outline-none transition">
+                        </div>
                     </div>
 
                     <div class="grid md:grid-cols-2 gap-6">
@@ -193,6 +229,7 @@
         const submitBtn = document.getElementById('submitBtn');
         const feedback = document.getElementById('msgFeedback');
         const whatsappInput = document.getElementById('whatsapp');
+        const modal = document.getElementById('approvalModal');
 
         // Máscara de Telefone simples
         whatsappInput.addEventListener('input', (e) => {
@@ -219,13 +256,14 @@
                 });
 
                 if (response.ok) {
-                    feedback.innerText = "ACESSO LIBERADO! Redirecionando para o WhatsApp...";
+                    feedback.innerText = "DADOS ENVIADOS COM SUCESSO!";
                     feedback.className = "block text-center p-4 rounded-md font-bold bg-green-500/10 text-green-500";
                     
-                    // Redirecionamento após sucesso (Substitua pelo link real do seu grupo)
-                    setTimeout(() => {
-                        window.location.href = "https://chat.whatsapp.com/SEU_LINK_DO_GRUPO_REAL";
-                    }, 2000);
+                    // Exibe o Pop-up de aprovação
+                    modal.style.display = 'flex';
+                    form.reset();
+                    submitBtn.disabled = false;
+                    submitBtn.innerHTML = 'LIBERAR MEU ACESSO <i class="fab fa-whatsapp"></i>';
                 } else {
                     throw new Error('Falha no envio');
                 }
