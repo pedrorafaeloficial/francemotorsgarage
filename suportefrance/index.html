@@ -1,1 +1,241 @@
+<!DOCTYPE html>
+<html lang="pt-br" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Suporte France Motors Garage | Especialistas Peugeot & Citroën</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Oswald:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#000000',
+                        secondary: '#FFFFFF',
+                        tertiary: '#991B1B', // Vermelho mais escuro e sóbrio
+                        darkGrey: '#121212'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        heading: ['Oswald', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
 
+    <style>
+        .btn-red-shadow {
+            box-shadow: 0 4px 0px #7f1d1d; /* Sombra condizente com o vermelho escuro */
+            transition: all 0.2s ease;
+        }
+        .btn-red-shadow:active {
+            box-shadow: 0 0px 0px #7f1d1d;
+            transform: translateY(4px);
+        }
+        .hero-gradient {
+            background: linear-gradient(180deg, #000000 0%, #1a1a1a 100%);
+        }
+        .card-hover:hover {
+            border-color: #E11D48;
+            transform: translateY(-5px);
+        }
+        .text-glow {
+            text-shadow: 0 0 15px rgba(225, 29, 72, 0.4);
+        }
+    </style>
+</head>
+<body class="bg-white text-primary">
+
+    <nav class="fixed w-full z-50 bg-black/95 border-b border-zinc-800 backdrop-blur-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20 items-center">
+                <div class="flex items-center gap-3">
+                    <div class="bg-tertiary text-white p-2 rounded transform rotate-3">
+                        <i class="fas fa-car-side text-2xl"></i>
+                    </div>
+                    <span class="font-heading text-2xl font-bold tracking-tighter text-white uppercase italic">
+                        FRANCE <span class="text-tertiary">MOTORS</span> GARAGE
+                    </span>
+                </div>
+                <div class="hidden md:block">
+                    <a href="#formulario" class="bg-white text-black px-6 py-2 rounded-md font-bold hover:bg-tertiary hover:text-white transition-all uppercase text-sm tracking-widest">
+                        Acesso Grátis
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <header class="relative pt-32 pb-20 md:pt-56 md:pb-40 hero-gradient overflow-hidden">
+        <div class="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none">
+            <div class="absolute top-20 right-10 w-96 h-96 bg-tertiary rounded-full blur-[120px]"></div>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+            <div class="inline-flex items-center gap-2 px-3 py-1 bg-zinc-900 border border-zinc-700 rounded-full text-zinc-400 text-sm font-medium mb-8">
+                <span class="w-2 h-2 bg-red-600 rounded-full animate-pulse"></span>
+                SUPORTE TÉCNICO EXCLUSIVO
+            </div>
+            
+            <h1 class="font-heading text-5xl md:text-8xl font-bold text-white mb-6 uppercase italic leading-[0.9] tracking-tighter">
+                DOMINE A LINHA <br>
+                <span class="text-tertiary text-glow italic">FRANCESA</span> DE VEZ
+            </h1>
+            
+            <p class="max-w-2xl mx-auto text-zinc-400 text-lg md:text-xl mb-12 font-light">
+                O suporte definitivo para mecânicos que não querem mais perder tempo (e dinheiro) com diagnósticos complexos em Peugeot e Citroën.
+            </p>
+
+            <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                <a href="#formulario" class="btn-red-shadow w-full sm:w-auto bg-tertiary text-white px-10 py-5 rounded-md font-heading text-xl font-bold uppercase italic tracking-wider hover:brightness-110">
+                    Entrar no Grupo Agora <i class="fab fa-whatsapp ml-2"></i>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <section class="py-24 bg-white border-y border-zinc-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-3 gap-12">
+                <div class="card-hover border-l-4 border-black p-6 transition-all duration-300">
+                    <div class="text-tertiary mb-4"><i class="fas fa-bolt text-3xl"></i></div>
+                    <h3 class="font-heading text-2xl font-bold uppercase mb-3">Diagnóstico Ágil</h3>
+                    <p class="text-zinc-600 leading-relaxed">Resolva panes elétricas e erros de BSI/BSM em minutos com a experiência coletiva de centenas de mecânicos.</p>
+                </div>
+                <div class="card-hover border-l-4 border-black p-6 transition-all duration-300">
+                    <div class="text-tertiary mb-4"><i class="fas fa-microchip text-3xl"></i></div>
+                    <h3 class="font-heading text-2xl font-bold uppercase mb-3">Telecarregamentos</h3>
+                    <p class="text-zinc-600 leading-relaxed">Dicas sobre Diagbox, Lexia e codificações que ninguém te conta. Suporte real para eletrônica embarcada.</p>
+                </div>
+                <div class="card-hover border-l-4 border-black p-6 transition-all duration-300">
+                    <div class="text-tertiary mb-4"><i class="fas fa-handshake text-3xl"></i></div>
+                    <h3 class="font-heading text-2xl font-bold uppercase mb-3">Peças e Pincetes</h3>
+                    <p class="text-zinc-600 leading-relaxed">Saiba quais marcas paralelas funcionam e quais são dor de cabeça garantida para o seu cliente.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="formulario" class="py-24 bg-black relative overflow-hidden">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="bg-darkGrey border border-zinc-800 rounded-2xl overflow-hidden shadow-2xl">
+                <div class="bg-tertiary py-4 px-8 text-center">
+                    <h2 class="font-heading text-2xl font-bold text-white uppercase italic tracking-widest">Ficha de Inscrição Gratuita</h2>
+                </div>
+                
+                <form id="franceMotorsForm" class="p-8 md:p-12 space-y-6">
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-zinc-400 text-xs uppercase font-bold tracking-widest mb-2">Nome Completo</label>
+                            <input type="text" name="nome" required placeholder="Seu nome" class="w-full bg-zinc-900 border border-zinc-800 rounded-md py-4 px-4 text-white focus:ring-2 focus:ring-tertiary outline-none transition">
+                        </div>
+                        <div>
+                            <label class="block text-zinc-400 text-xs uppercase font-bold tracking-widest mb-2">WhatsApp</label>
+                            <input type="tel" name="whatsapp" id="whatsapp" required placeholder="(00) 00000-0000" class="w-full bg-zinc-900 border border-zinc-800 rounded-md py-4 px-4 text-white focus:ring-2 focus:ring-tertiary outline-none transition">
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="block text-zinc-400 text-xs uppercase font-bold tracking-widest mb-2">Seu Melhor E-mail</label>
+                        <input type="email" name="email" required placeholder="contato@oficina.com" class="w-full bg-zinc-900 border border-zinc-800 rounded-md py-4 px-4 text-white focus:ring-2 focus:ring-tertiary outline-none transition">
+                    </div>
+
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-zinc-400 text-xs uppercase font-bold tracking-widest mb-2">É Mecânico Profissional?</label>
+                            <select name="is_mecanico" required class="w-full bg-zinc-900 border border-zinc-800 rounded-md py-4 px-4 text-white focus:ring-2 focus:ring-tertiary outline-none appearance-none cursor-pointer">
+                                <option value="">Selecione...</option>
+                                <option value="sim">Sim, sou profissional</option>
+                                <option value="entusiasta">Sou entusiasta / Hobby</option>
+                                <option value="outro">Dono de carro</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-zinc-400 text-xs uppercase font-bold tracking-widest mb-2">Cidade / Estado</label>
+                            <input type="text" name="regiao" required placeholder="Ex: São Paulo - SP" class="w-full bg-zinc-900 border border-zinc-800 rounded-md py-4 px-4 text-white focus:ring-2 focus:ring-tertiary outline-none transition">
+                        </div>
+                    </div>
+
+                    <button type="submit" id="submitBtn" class="w-full bg-tertiary text-white font-heading text-2xl font-bold py-5 rounded-md uppercase italic btn-red-shadow hover:brightness-110 flex items-center justify-center gap-3">
+                        LIBERAR MEU ACESSO <i class="fab fa-whatsapp"></i>
+                    </button>
+
+                    <p id="msgFeedback" class="hidden text-center p-4 rounded-md font-bold"></p>
+                    
+                    <p class="text-center text-zinc-500 text-xs uppercase tracking-tighter">
+                        <i class="fas fa-lock mr-1"></i> Seus dados estão seguros. Respeitamos sua privacidade.
+                    </p>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-12 bg-black border-t border-zinc-900">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <div class="flex justify-center mb-6">
+                <span class="font-heading text-xl font-bold text-white uppercase italic tracking-tighter">
+                    FRANCE <span class="text-tertiary">MOTORS</span> GARAGE
+                </span>
+            </div>
+            <p class="text-zinc-600 text-sm mb-2">&copy; 2024 France Motors Garage. Todos os direitos reservados.</p>
+            <p class="text-zinc-700 text-[10px] uppercase tracking-[0.3em]">Powered by Agencia Foxon</p>
+        </div>
+    </footer>
+
+    <script>
+        const form = document.getElementById('franceMotorsForm');
+        const submitBtn = document.getElementById('submitBtn');
+        const feedback = document.getElementById('msgFeedback');
+        const whatsappInput = document.getElementById('whatsapp');
+
+        // Máscara de Telefone simples
+        whatsappInput.addEventListener('input', (e) => {
+            let x = e.target.value.replace(/\D/g, '').match(/(\d{0,2})(\d{0,5})(\d{0,4})/);
+            e.target.value = !x[2] ? x[1] : '(' + x[1] + ') ' + x[2] + (x[3] ? '-' + x[3] : '');
+        });
+
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            // Estado de carregamento
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = '<i class="fas fa-cog fa-spin"></i> PROCESSANDO...';
+            feedback.classList.add('hidden');
+
+            const formData = new FormData(form);
+            const data = Object.fromEntries(formData.entries());
+
+            try {
+                const response = await fetch('https://automacao.agenciafoxon.com.br/webhook/grupoexclusivo', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(data)
+                });
+
+                if (response.ok) {
+                    feedback.innerText = "ACESSO LIBERADO! Redirecionando para o WhatsApp...";
+                    feedback.className = "block text-center p-4 rounded-md font-bold bg-green-500/10 text-green-500";
+                    
+                    // Redirecionamento após sucesso (Substitua pelo link real do seu grupo)
+                    setTimeout(() => {
+                        window.location.href = "https://chat.whatsapp.com/SEU_LINK_DO_GRUPO_REAL";
+                    }, 2000);
+                } else {
+                    throw new Error('Falha no envio');
+                }
+            } catch (err) {
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = 'TENTAR NOVAMENTE <i class="fab fa-whatsapp"></i>';
+                feedback.innerText = "Ops! Algo deu errado. Tente novamente mais tarde.";
+                feedback.className = "block text-center p-4 rounded-md font-bold bg-red-500/10 text-red-500";
+            }
+        });
+    </script>
+</body>
+</html>
